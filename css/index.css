@@ -106,7 +106,7 @@ body.body {
 .nav {
     color:white;
     text-transform: capitalize;
-    font-size: 2.7em;
+    font-size: 2em;
 }
 .nav a {
     cursor: pointer;
@@ -145,8 +145,8 @@ body.body {
     opacity: 1;
 }
 body .nav>li>a {
-    padding: 3px 0px;
-    line-height: 1.2em;
+    padding: 0px;
+    line-height: 1.1em;
 }
 
 body .nav>li>a:focus, body .nav>li>a:hover {
