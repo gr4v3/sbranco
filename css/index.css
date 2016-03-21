@@ -1,0 +1,162 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/mar/2016, 21:38:08
+    Author     : André
+*/
+@font-face {
+    font-family: code-bold;
+    src: url(code_bold.otf);
+}
+@font-face {
+    font-family: code-light;
+    src: url(code_light.otf);
+}
+
+body.body {
+    margin:0;
+    padding:0;
+    background-color: rgba(0, 0, 0, 0.96);
+    font-family:code-light;
+}
+.main {
+    position:fixed;
+    top: 4%;
+    width: 100%;
+}
+.slide {
+    width:100%;
+    overflow: hidden;
+    right:0px;
+}
+.gallery {
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-color: grey;
+}
+.gallery * {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+}
+.gallery .item {
+    margin: 0px;
+    padding: 0px;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    transition: 0.6s filter linear;
+    -webkit-transition: 0.6s -webkit-filter linear;
+    -moz-transition: 0.6s -moz-filter linear;
+    -ms-transition: 0.6s -ms-filter linear;
+    -o-transition: 0.6s -o-filter linear;
+}
+.gallery .item.view {
+    -webkit-filter: none;
+    -moz-filter: none;
+    -o-filter: none;
+    -ms-filter: none;
+    filter: none;
+}
+.gallery .item img {
+    width:auto;
+    height: 67vh;
+    border:4px solid black;
+    transition: 0.5s all linear;
+    -webkit-transition: 0.5s all linear;
+    -moz-transition: 0.5s all linear;
+    -ms-transition: 0.5s all linear;
+    -o-transition: 0.5s all linear;
+    border-radius: 1px;
+}
+.gallery .item.view img {
+    border:4px solid white;
+    height: 70vh;
+}
+.gallery .item:first-child img {
+
+}
+.gallery .item:last-child img {
+    border-right:none;
+}
+
+
+.nav {
+    color:white;
+    text-transform: capitalize;
+    font-size: 2.7em;
+}
+.nav a {
+    cursor: pointer;
+    text-indent: 12px;
+    line-height: 56px;
+    letter-spacing: 1px;
+    transition: 0.3s all linear;
+    -webkit-transition: 0.3s all linear;
+    -moz-transition: 0.3s all linear;
+    -ms-transition: 0.3s all linear;
+    -o-transition: 0.3s all linear;
+    text-decoration: none;
+    color:white;
+    position:relative;
+}
+.nav a:hover {
+    color: white;
+   text-decoration: none;
+}
+.nav a:after {
+    transition: 0.6s all linear;
+    -webkit-transition: 0.6s all linear;
+    -moz-transition: 0.6s all linear;
+    -ms-transition: 0.6s all linear;
+    -o-transition: 0.6s all linear;
+    opacity:0;
+}
+.nav a:hover:after {
+    content: attr(title);
+    position: absolute;
+    left: 0px;
+    -webkit-filter: blur(21px);
+    color: white;
+    font-family: code-bold;
+    font-size: 1em;
+    opacity: 1;
+}
+body .nav>li>a {
+    padding: 3px 0px;
+    line-height: 1.2em;
+}
+
+body .nav>li>a:focus, body .nav>li>a:hover {
+    background-color:transparent;
+}
+
+body .menu {
+    padding: 0px;
+}
+body .content {
+    padding-left:0px;
+}
+
+.author {
+    color:white;
+    font-size: 5em;
+    line-height: 0.7em;
+    padding: 25px 0px;
+    letter-spacing: 1px;
+}
+.author div:last-child {
+    font-size: 0.6em;
+}
