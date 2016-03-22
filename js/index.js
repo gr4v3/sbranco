@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+var autobrowseid = false;
 $(document).ready(function() {
     console.log('doc ready!');
     var $slide = $('.slide');
     var $gallery = $slide.find('.gallery');
     if ($gallery.length) {
-        
         var slide_width = $slide.width();
         $slide.swipe({
             swipeLeft: function() {
@@ -42,8 +42,14 @@ $(document).ready(function() {
                     
             }
         });
-        
     }
+    $(document.body).on('mousemove', function() {
+        // reset the auto browser gallery
+        if (autobrowseid) clearInterval(autobrowseid);
+    });
+    autobrowseid = setInterval(function() {
+
+    },1000);
 });
 
 

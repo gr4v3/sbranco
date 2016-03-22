@@ -19,7 +19,7 @@ and open the template in the editor.
 body.body {
     margin:0;
     padding:0;
-    background-color: rgba(0, 0, 0, 0.96);
+    background-color: rgb(36, 35, 33);
     font-family:code-light;
 }
 .main {
