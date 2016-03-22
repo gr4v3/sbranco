@@ -21,6 +21,7 @@ body.body {
     padding:0;
     background-color: rgb(36, 35, 33);
     font-family:code-light;
+    font-size:14px;
 }
 .main {
     position:fixed;
@@ -33,9 +34,7 @@ body.body {
     right:0px;
 }
 .gallery {
-    border-collapse: separate;
-    border-spacing: 0px;
-    border-color: grey;
+    background-color: white;
 }
 .gallery * {
     -moz-user-select: -moz-none;
@@ -53,11 +52,12 @@ body.body {
     margin: 0px;
     padding: 0px;
     position:relative;
+    /*
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
-    filter: blur(5px);
+    filter: blur(5px);*/
     transition: 0.6s filter linear;
     -webkit-transition: 0.6s -webkit-filter linear;
     -moz-transition: 0.6s -moz-filter linear;
@@ -73,21 +73,24 @@ body.body {
 }
 .gallery .item img {
     width:auto;
-    height: 67vh;
-    border:4px solid black;
+    height: 75vh;
     transition: 0.5s all linear;
     -webkit-transition: 0.5s all linear;
     -moz-transition: 0.5s all linear;
     -ms-transition: 0.5s all linear;
     -o-transition: 0.5s all linear;
     border-radius: 1px;
+    border:4px solid white;
+    border-right-width: 6px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
 }
 .gallery .item.view img {
-    border:4px solid white;
-    height: 70vh;
+    
+    height: 75vh;
 }
 .gallery .item:first-child img {
-
+    border-left-width: 0px;
 }
 .gallery .item:last-child img {
     border-right:none;
@@ -106,7 +109,7 @@ body.body {
 .nav {
     color:white;
     text-transform: capitalize;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 .nav a {
     cursor: pointer;
@@ -121,10 +124,12 @@ body.body {
     text-decoration: none;
     color:white;
     position:relative;
+    opacity:0.7;
 }
 .nav a:hover {
     color: white;
    text-decoration: none;
+   opacity:1;
 }
 .nav a:after {
     transition: 0.6s all linear;
@@ -144,6 +149,11 @@ body.body {
     font-size: 1em;
     opacity: 1;
 }
+.nav i {
+    font-family: times new roman;
+    text-transform: lowercase;
+    padding-right: 2px;
+}
 body .nav>li>a {
     padding: 0px;
     line-height: 1.1em;
@@ -158,15 +168,25 @@ body .menu {
 }
 body .content {
     padding-left:0px;
+    padding-right: 0px;
 }
-
 .author {
+    color:white;
+    padding: 25px 0px;
+}
+.author h1,
+.author h2 {
+    margin:0px;    
+}
+.author h1 {
     color:white;
     font-size: 5em;
     line-height: 0.7em;
-    padding: 25px 0px;
     letter-spacing: 1px;
 }
-.author div:last-child {
-    font-size: 0.6em;
+.author h2 {
+
+}
+audio {
+    visibility:hidden;
 }
