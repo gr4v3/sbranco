@@ -46,7 +46,7 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="/assets/js/index.js" type="text/javascript"></script>
         <div class="audio">
-            <audio id="track" controls autoplay>
+            <audio id="track" controls autoplay loop="true">
             <source type="audio/mpeg">
             Your browser does not support the audio element.
          </audio>
