@@ -20,9 +20,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-
+            $this->output->set_template('main');
             $this->load->library('page');
             $items = $this->page->items();
-            $this->load->view('welcome_message');
+            $this->output->set_output_data('menu', $this->load->view('menu', array('items' => $items), TRUE), TRUE);
+            $this->output->set_output_data('content', '', TRUE);
 	}
 }

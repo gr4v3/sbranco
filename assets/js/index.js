@@ -5,21 +5,14 @@
  */
 $(document).ready(function() {
     console.log('doc ready!');
-    var $slide = $('.slide');
-    var $gallery = $slide.find('.gallery');
-    if ($slide.length && $gallery.length) {
-        $slide.swipe({
-            swipeLeft: autobrowse.left,
-            swipeRight: autobrowse.right
-        });
-    }
-    $(document.body).on('mousemove', function() {
+    var idlecount = 0;
+    $(document.body).on('mousemove', function(e) {
         // reset the auto browser gallery
         if (autobrowse.id) clearInterval(autobrowse.id);
-        autobrowse.start();
+        idlecount = 0;
     });
-    autobrowse.start();
     $(document).bind('mousewheel', function(e){
+        if (autobrowse.id) clearInterval(autobrowse.id);
         e.stopPropagation();
         if(e.originalEvent.wheelDelta /120 > 0) {
             clearTimeout($.data(this, 'timer'));
@@ -36,12 +29,28 @@ $(document).ready(function() {
             }, 50));
         }
     });
+    $('*[data-type="async"]').on('click', function(e) {
+        history.pushState(null, null, this.href);
+        e.preventDefault();
+        $('.content').load(this.href + '?type=async', function() {
+            $(document.body).trigger('load');
+        });
+        
+    });
+    // check for the idler
+    setInterval(function() {
+        idlecount = idlecount + 1;
+        if (idlecount === 3) {
+            console.log('user idling!');
+            autobrowse.start();
+        }
+    }, 5000);
 });
 
 var autobrowse = {
     id:false,
     start:function() {
-        this.id = setInterval(function() {
+        autobrowse.id = setInterval(function() {
             var left = autobrowse.left();
             if (!left) {
                 var $slide = $('.slide');
@@ -59,7 +68,6 @@ var autobrowse = {
     },
     left:function() {
         console.log('swipe left');
-        if (this.id) clearInterval(this.id);
         var $slide = $('.slide');
         var slide_width = $slide.width();
         var $current = $('.slide .gallery .view');
@@ -77,7 +85,6 @@ var autobrowse = {
     },
     right:function() {
         console.log('swipe right');
-        if (this.id) clearInterval(this.id);
         var $slide = $('.slide');
         var slide_width = $slide.width();
         var $current = $('.slide .gallery .view');

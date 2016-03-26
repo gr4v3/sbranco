@@ -16,11 +16,10 @@ class Page {
         if (!is_dir($pages_path)) mkdir($pages_path, 0777, TRUE);
         $pages = scandir($pages_path);
         foreach($pages as &$page) {
-            Debug($page);
             if (in_array($page, array('.', '..'))) $page = NULL;
             else $page = $this->get($page);
         }
-        return array_filter($pages);
+        return array_values(array_filter($pages));
     }
     public function set($name = NULL, $options = array()) {
         $page_path = FCPATH . 'assets/pages/' . $name;
