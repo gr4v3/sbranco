@@ -24,6 +24,7 @@
 </style>
 <script type="text/javascript">
 document.body.onload = function() {
+    console.log('slide ready!');
     var track = document.getElementById('track');
     var initial_volume = track.volume * 100;
     var volumeinterval = setInterval(function() {

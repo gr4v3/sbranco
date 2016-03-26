@@ -12,7 +12,9 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/assets/css/index.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/media.css" rel="stylesheet" type="text/css"/>
         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -26,6 +28,8 @@ and open the template in the editor.
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=225678960794287";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+        <label class="fa trigger" for="mobile"></label>
+        <input type="checkbox" id="mobile" style="display:none;" />
         <div class="main">
             <a href="/"><div class="author col-md-12">
                 <h1>sandra branco</h1>
