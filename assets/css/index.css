@@ -110,7 +110,7 @@ body.body {
     opacity:0.7;
 }
 .nav a:hover,
-.nav a:active,
+.nav a.active,
 .nav a:visited {
     color: white;
    text-decoration: none;
@@ -125,7 +125,8 @@ body.body {
     opacity:0;
 }
 .nav a:hover:after,
-.nav a:active:after {
+.nav a:active:after,
+.nav a.active:after {
     content: attr(title);
     position: absolute;
     left: 0px;

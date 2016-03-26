@@ -48,6 +48,7 @@ document.body.onload = function() {
             swipeLeft: autobrowse.left,
             swipeRight: autobrowse.right
         });
-    }    
+    }
+    $('.nav li a[title="<?php echo $link; ?>"]').addClass('active');
 };
 </script>

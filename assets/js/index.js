@@ -35,7 +35,9 @@ $(document).ready(function() {
         $('.content').load(this.href + '?type=async', function() {
             $(document.body).trigger('load');
         });
-        
+        var $this = $(this);
+            $this.parent().parent().find('a').removeClass('active');
+            $this.addClass('active');
     });
     // check for the idler
     setInterval(function() {
