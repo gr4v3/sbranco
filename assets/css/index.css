@@ -187,6 +187,9 @@ body .content {
 .author h2 {
 
 }
-audio {
-    visibility:hidden;
+.audio {
+    position:fixed;
+    bottom:0px;
+    width: 100vw;    
+    text-align:center;
 }

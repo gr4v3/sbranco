@@ -22,4 +22,15 @@ class Welcome extends CI_Controller {
 	{
             $this->load->view('admin');
 	}
+        public function page() {
+            echo json_encode(array(
+                'title' => 'people',
+                'audio' => 'thexx.mp3',
+                'background-color' => 'rgb(36, 35, 33)',
+                'type' => 'normal',
+                'items' => array(
+                    
+                )
+            ));
+        }
 }

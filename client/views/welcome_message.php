@@ -11,7 +11,7 @@ and open the template in the editor.
         <title>A fotógrafa</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/index.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Optional theme -->
@@ -53,46 +53,48 @@ and open the template in the editor.
                     <table class="gallery" cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td class="item view">
-                                <img src="gallery/12895294_10153250903237924_1629883350_n.jpg" alt=""/>
+                                <img src="assets/gallery/12895294_10153250903237924_1629883350_n.jpg" alt=""/>
                             </td>
                             <td class="item">
-                                <img src="gallery/12895379_10153250898017924_602496037_n.jpg" alt=""/>
+                                <img src="assets/gallery/12895379_10153250898017924_602496037_n.jpg" alt=""/>
                             </td>
                             <td class="item">
-                                <img src="gallery/12874419_10153251069127924_230922786_o.jpg" alt=""/>
+                                <img src="assets/gallery/12874419_10153251069127924_230922786_o.jpg" alt=""/>
                             </td>
                             <td class="item">
-                                <img src="gallery/12422312_10153251081582924_1995153778_o (1).jpg" alt=""/>
+                                <img src="assets/gallery/12422312_10153251081582924_1995153778_o.jpg" alt=""/>
                             </td>
                             <td class="item">
-                                <img src="gallery/12443635_10153251081502924_1170462370_o.jpg" alt=""/>
+                                <img src="assets/gallery/12443635_10153251081502924_1170462370_o.jpg" alt=""/>
                             </td>
                             <td class="item">
-                                <img src="gallery/12596754_10153251081772924_1052114118_o.jpg" alt=""/>
+                                <img src="assets/gallery/12596754_10153251081772924_1052114118_o.jpg" alt=""/>
                             </td>
                             <td class="item">
-                                <img src="gallery/12874558_10153251074872924_1974357794_o.jpg" alt=""/>
+                                <img src="assets/gallery/12874558_10153251074872924_1974357794_o.jpg" alt=""/>
                             </td>
                             <td class="item">
-                                <img src="gallery/12874219_10153251346387924_85925787_o.jpg" alt=""/>
+                                <img src="assets/gallery/12874219_10153251346387924_85925787_o.jpg" alt=""/>
                             </td>
                             <td class="item">
-                                <img src="gallery/12887455_10153251074732924_1295252013_o.jpg" alt=""/>
+                                <img src="assets/gallery/12887455_10153251074732924_1295252013_o.jpg" alt=""/>
                             </td>
                         </tr>   
                     </table>
                 </div>
             </div>
         </div>
-        <script src="js/jquery-1.12.2.min.js" type="text/javascript"></script>
-        <script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script>
-        <script src="js/jquery.scrollTo.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery-1.12.2.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.touchSwipe.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.scrollTo.min.js" type="text/javascript"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <script src="js/index.js" type="text/javascript"></script>
-        <audio controls autoplay>
-            <source src="audio/thexx.mp3" type="audio/mpeg">
+        <script src="assets/js/index.js" type="text/javascript"></script>
+        <div class="audio">
+            <audio controls autoplay>
+            <source src="assets/audio/thexx.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
          </audio>
+        </div>
     </body>
 </html>
