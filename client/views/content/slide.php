@@ -25,6 +25,7 @@
 <script type="text/javascript">
 document.body.onload = function() {
     console.log('slide ready!');
+    /*
     var track = document.getElementById('track');
     var initial_volume = track.volume * 100;
     var volumeinterval = setInterval(function() {
@@ -40,8 +41,12 @@ document.body.onload = function() {
                 },150);
             }
             else initial_volume = initial_volume - 10;
+            if (initial_volume < 0) initial_volume = 0;
             track.volume = initial_volume / 100;
         },50);
+        */
+    var track = document.getElementById('track');
+        track.src =  '/assets/audio/<?php echo $audio; ?>';
     var $slide = $('.slide');
     var $gallery = $slide.find('.gallery');
     if ($slide.length && $gallery.length) {
