@@ -8,6 +8,9 @@
 ?>
 <div class="container-fluid">
     <div class="col-md-12 gallery">
+        <div class="col-md-2 item add">
+            <div class="fa fa-plus"></div>
+        </div>
         <?php 
             echo $items;
         ?>

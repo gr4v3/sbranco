@@ -8,7 +8,12 @@ and open the template in the editor.
     Author     : fabio menezes
 */
 .gallery {
-    margin: 30px auto;
+    
+}
+.gallery .item {
+    margin: 2em auto;
+    cursor:pointer;
+    opacity:0.5;
 }
 .gallery .item div {
     width: 100%;
@@ -18,4 +23,15 @@ and open the template in the editor.
     background-position: center center;
     background-color: white;
     border-radius: 4px;
+}
+.gallery .item.add,
+.gallery .item:hover {
+    opacity:1;
+}
+.gallery .item.add div {
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 8em;
+    text-align:center;
+    line-height: 2em;
 }

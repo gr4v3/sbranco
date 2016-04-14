@@ -7,5 +7,7 @@
  */
 ?>
 <div class="col-md-2 item">
-    <div style="background-image:url(<?php echo 'http://dev.sbranco.pt/assets/pages/' . $link . '/' . current($items); ?>);"></div>
+    <a href="/admin/gallery/<?php echo $link; ?>">
+        <div style="background-image:url(<?php echo 'http://dev.sbranco.pt/assets/pages/' . $link . '/' . current($items); ?>);"></div>
+    </a>    
 </div>
