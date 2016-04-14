@@ -20,6 +20,7 @@ echo form_open_multipart();
                 $audios = scandir('../assets/audio');
                 foreach($audios as $item) {
                    if (in_array($item, array('.', '..'))) continue;
+                   echo "<option value=\"$item\">$item</option>";
                 }
             ?>
         </select>
