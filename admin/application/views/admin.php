@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-
+    <link href="assets/css/admin.css" rel="stylesheet" type="text/css" />
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -314,7 +314,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <aside class="right-side">
 
-
+                <?php echo $page; ?>
             </aside><!-- /.right-side -->
 
         </div><!-- ./wrapper -->

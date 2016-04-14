@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/abr/2016, 22:19:03
+    Author     : fabio menezes
+*/
+.gallery {
+    margin: 30px auto;
+}
+.gallery .item div {
+    width: 100%;
+    height: 20vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: white;
+    border-radius: 4px;
+}

@@ -22,7 +22,11 @@ class Welcome extends CI_Controller {
 	{
             $this->load->library('page');
             $items = $this->page->items();
-            Debug($items);
-            $this->load->view('admin');
+            $gallery_items = array();
+            foreach($items as $item) {
+                $gallery_items[] = $this->load->view('gallery/item', $item, TRUE);
+            }
+            $gallery = $this->load->view('gallery', array('items' => implode('', $gallery_items)), TRUE);
+            $this->load->view('admin', array('page' => $gallery));
 	}
 }
