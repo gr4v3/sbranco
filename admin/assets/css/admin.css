@@ -38,3 +38,10 @@ and open the template in the editor.
 .form-group {
     padding:10px;
 }
+input[type="color"] {
+    background-color: transparent;
+    border: none;
+    width: 4em;
+    cursor: pointer;
+    height: 3em;
+}

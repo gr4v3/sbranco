@@ -13,13 +13,21 @@ echo form_open_multipart();
     
 </div>
 <div class="form-group">
-    <label class="control-label col-sm-2"for="audio">Email address:</label>
-    <div class="col-sm-10"><input type="text" class="form-control" id="audio" name="audio"></div>
-    
+    <label class="control-label col-sm-2"for="audio">Escolha uma música de fundo:</label>
+    <div class="col-sm-10">
+        <select class="form-control" id="audio" name="audio">
+            <?php 
+                $audios = scandir('../assets/audio');
+                foreach($audios as $item) {
+                   if (in_array($item, array('.', '..'))) continue;
+                }
+            ?>
+        </select>
+    </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-sm-2"for="background">Email address:</label>
-    <div class="col-sm-10"><input type="text" class="form-control" id="background" name="background" value="<?php echo $background; ?>"></div>
+    <label class="control-label col-sm-2"for="background">Cor do background:</label>
+    <div class="col-sm-10"><input type="color" class="form-control" id="background" name="background" value="<?php echo $background; ?>"></div>
     
 </div>
 <div class="form-group">
