@@ -9,12 +9,7 @@ echo form_open_multipart();
 ?>
 <div class="form-group">
     <label class="control-label col-sm-2"for="title">Nome do menu:</label>
-    <div class="col-sm-10"><input type="text" class="form-control" id="title" name="title"></div> 
-    
-</div>
-<div class="form-group">
-    <label class="control-label col-sm-2"for="audio">Email address:</label>
-    <div class="col-sm-10"><input type="text" class="form-control" id="audio" name="audio"></div>
+    <div class="col-sm-10"><input type="text" class="form-control" id="title" name="title" value="<?php echo $title; ?>"></div> 
     
 </div>
 <div class="form-group">
@@ -24,7 +19,7 @@ echo form_open_multipart();
 </div>
 <div class="form-group">
     <label class="control-label col-sm-2"for="background">Email address:</label>
-    <div class="col-sm-10"><input type="text" class="form-control" id="background" name="background"></div>
+    <div class="col-sm-10"><input type="text" class="form-control" id="background" name="background" value="<?php echo $background; ?>"></div>
     
 </div>
 <div class="form-group">
