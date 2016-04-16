@@ -20,6 +20,7 @@ class Pages extends CI_Controller {
 	 */
 	public function index($index = NULL)
 	{
+            $this->load->library('page');
             if (empty($index)) {
                 $this->load->view('admin', array('page' => $this->load->view('pages/form/item', array(
                     'title' => '', 
