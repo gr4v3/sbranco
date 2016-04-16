@@ -108,6 +108,40 @@ $(function() {
             //console.log("The element has been unchecked")
         }
     });
+    
+    
 
 });
 
+var Gallery = {
+    prev:false,
+    dragstart:function(event) {
+        console.log('gallery dragstart');
+        Gallery.prev = event.target;
+    },
+    dragenter:function(event) {
+        if (Gallery.prev === event.target) return true;
+        console.log('gallery dragenter');
+        Gallery.swap(event.target, Gallery.prev);
+    },
+    clear:function() {
+        console.log('gallery clear');
+        if (Gallery.prev) Gallery.prev.parentNode.parentNode.removeChild(Gallery.prev.parentNode);
+    },
+    allowdrop:function(event) {
+        event.preventDefault();
+    },
+    swap:function(a, b) {
+        var aParent = a.parentNode;
+        var bParent = b.parentNode;
+
+        var aHolder = document.createElement("div");
+        var bHolder = document.createElement("div");
+
+        aParent.replaceChild(aHolder,a);
+        bParent.replaceChild(bHolder,b);
+
+        aParent.replaceChild(b,aHolder);
+        bParent.replaceChild(a,bHolder);
+    }
+}

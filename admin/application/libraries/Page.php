@@ -28,7 +28,7 @@ class Page {
     }
     public function get($name = NULL) {
         $page_path = CLIENTPATH . 'assets/pages/' . $name;
-        if (!is_dir($page_path)) return (object) array();
+        if (!is_dir($page_path)) return NULL;
         return json_decode(file_get_contents($page_path. '/.options'));
     }
 }

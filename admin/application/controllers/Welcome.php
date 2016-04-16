@@ -24,7 +24,7 @@ class Welcome extends CI_Controller {
             $items = $this->page->items();
             $gallery_items = array();
             foreach($items as $item) {
-                $gallery_items[] = $this->load->view('gallery/item', $item, TRUE);
+                $gallery_items[] = $this->load->view('pages/item', $item, TRUE);
             }
             $gallery = $this->load->view('gallery', array('items' => implode('', $gallery_items)), TRUE);
             $this->load->view('admin', array('page' => $gallery));
