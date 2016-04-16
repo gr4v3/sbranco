@@ -18,23 +18,25 @@ class Pages extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index($index)
+	public function index($index = NULL)
 	{
-            $this->load->library('page');
-            
-            $page_form = $this->input->post('page');
-            if (!empty($page_form)) {
-                //$page_form['link'] = namelize(strip_tags($page_form['title']));
-                
-                $this->page->set($this->input->post('link'), $page_form);
+            if (empty($index)) {
+                $this->load->view('admin', array('page' => $this->load->view('pages/form/item', array(
+                    'title' => '', 
+                    'link' => '', 
+                    'audio' => '', 
+                    'background' => '', 
+                    'type' => 'slide', 
+                    'gallery' => ''
+                    ), TRUE)));
+            } else {
+                $page = $this->page->get($index);
+                $gallery_items = array();
+                foreach($page->items as $item) {
+                    $gallery_items[] = $this->load->view('pages/form/gallery/item', array('page' => $index, 'src' => $item), TRUE);
+                }
+                $page->gallery = implode('', $gallery_items);
+                $this->load->view('admin', array('page' => $this->load->view('pages/form/item', $page, TRUE)));
             }
-            
-            $page = $this->page->get($index);
-            $gallery_items = array();
-            foreach($page->items as $item) {
-                $gallery_items[] = $this->load->view('pages/form/gallery/item', array('page' => $index, 'src' => $item), TRUE);
-            }
-            $page->gallery = implode('', $gallery_items);
-            $this->load->view('admin', array('page' => $this->load->view('pages/form/item', $page, TRUE)));
 	}
 }

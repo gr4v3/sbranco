@@ -8,6 +8,12 @@
 ?>
 <div class="col-md-2 item">
     <a href="/admin/pages/index/<?php echo $link; ?>">
-        <div style="background-image:url(<?php echo '/assets/pages/' . $link . '/' . current($items); ?>);"></div>
+        <?php 
+            if (empty($items)) {
+                ?><div><?php echo $title; ?></div><?php
+            } else {
+                ?><div style="background-image:url(<?php echo '/assets/pages/' . $link . '/' . current($items); ?>);"></div><?php
+            }
+        ?>
     </a>    
 </div>
