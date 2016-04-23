@@ -5,7 +5,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-Debug(current_url());
 ?>
 <form action="http://dev.sbranco.pt/admin/" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
@@ -43,9 +42,6 @@ Debug(current_url());
         </div>
 
     </div>
-    <?php
-        if (!empty($link)) {
-    ?>
     <div class="form-group">
         <label class="control-label col-sm-12"for="type">Fotografias:</label>
         <div class="col-sm-12 gallery">
@@ -63,9 +59,6 @@ Debug(current_url());
             
         </div>
     </div>
-        <?php }  else { ?>
-    <div class="form-group"></div>
-        <?php } ?>
      <div class="form-group"> 
         <div class="col-sm-offset-4 col-sm-8">
           <input type="submit" class="btn btn-info" value="Submeter">
