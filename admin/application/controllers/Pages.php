@@ -37,7 +37,11 @@ class Pages extends CI_Controller {
                     $gallery_items[] = $this->load->view('pages/form/gallery/item', array('page' => $index, 'src' => $item), TRUE);
                 }
                 $page->gallery = implode('', $gallery_items);
+                
                 $this->load->view('admin', array('page' => $this->load->view('pages/form/item', $page, TRUE)));
             }
 	}
+        public function upload() {
+            
+        }
 }

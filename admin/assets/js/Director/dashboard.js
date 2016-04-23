@@ -122,6 +122,7 @@ var Gallery = {
     dragenter:function(event) {
         if (Gallery.prev === event.target) return true;
         console.log('gallery dragenter');
+        if (!Gallery.prev) return false;
         Gallery.swap(event.target, Gallery.prev);
     },
     clear:function() {
@@ -144,4 +145,4 @@ var Gallery = {
         aParent.replaceChild(b,aHolder);
         bParent.replaceChild(a,bHolder);
     }
-}
+};

@@ -126,10 +126,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <!-- Director App -->
         <script src="/admin/assets/js/Director/app.js" type="text/javascript"></script>
-
+        <script src="/admin/assets/js/dropzone.js" type="text/javascript"></script>
         <!-- Director dashboard demo (This is only for demo purposes) -->
         <script src="/admin/assets/js/Director/dashboard.js" type="text/javascript"></script>
-
+        
         <!-- Director for demo purposes -->
         <script type="text/javascript">
             $('input').on('ifChecked', function(event) {

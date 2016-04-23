@@ -5,9 +5,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+Debug(current_url());
 ?>
-<form action="/admin" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+<form action="http://dev.sbranco.pt/admin/" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
         <label class="control-label col-sm-4"for="title">Nome do menu:</label>
         <div class="col-sm-6"><input type="text" class="form-control" id="title" name="page[title]" value="<?php echo $title; ?>"></div> 
@@ -43,11 +43,16 @@
         </div>
 
     </div>
+    <?php
+        if (!empty($link)) {
+    ?>
     <div class="form-group">
         <label class="control-label col-sm-12"for="type">Fotografias:</label>
         <div class="col-sm-12 gallery">
             <div class="col-md-2 item add">
-                <div class="fa fa-plus"></div>
+                <label class="fa fa-plus" for="file-select">
+                    <input type="file" id="file-select" name="photos[]" multiple style="display:none;"/>
+                </label>
             </div>
             <div ondrop="Gallery.clear()"  ondragover="Gallery.allowdrop(event)" class="col-md-2 item fa fa-trash">
                 <div>arraste para aqui se deseja apagar a foto</div>
@@ -58,9 +63,12 @@
             
         </div>
     </div>
+        <?php }  else { ?>
+    <div class="form-group"></div>
+        <?php } ?>
      <div class="form-group"> 
-        <div class="col-sm-offset-4 col-sm-2">
-          <button type="submit" class="btn btn-info">Submit</button>
+        <div class="col-sm-offset-4 col-sm-8">
+          <input type="submit" class="btn btn-info" value="Submeter">
           <a href="/admin" class="btn btn-danger">Voltar Atrás</a>
         </div>
       </div>

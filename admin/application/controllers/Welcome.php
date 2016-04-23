@@ -22,7 +22,9 @@ class Welcome extends CI_Controller {
             parent::__construct();
             $this->load->library('page');
             $page_form = $this->input->post('page');
+            var_dump($page_form);
             if (!empty($page_form)) {
+                
                 if (empty($page_form['link'])) $page_form['link'] = namelize($page_form['title']);
                 if (!isset($page_form['items'])) $page_form['items'] = array();
                 $this->page->set($page_form['link'], $page_form);
