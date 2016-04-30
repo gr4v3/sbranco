@@ -22,7 +22,9 @@ class Pages extends CI_Controller {
 	{
             $this->load->library('page');
             if (empty($index)) {
+                $pages = $this->page->items();
                 $this->load->view('admin', array('page' => $this->load->view('pages/form/item', array(
+                    'index' => count($pages),
                     'title' => '', 
                     'link' => '', 
                     'audio' => '', 
