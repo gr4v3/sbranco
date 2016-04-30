@@ -11,6 +11,7 @@
         <label class="control-label col-sm-4"for="title">Nome do menu:</label>
         <div class="col-sm-6"><input type="text" class="form-control" id="title" name="page[title]" value="<?php echo $title; ?>"></div> 
         <input type="hidden" name="page[link]" value="<?php echo $link; ?>" />
+        <input type="hidden" name="page[index]" value="<?php echo $index; ?>" />
     </div>
     <div class="form-group">
         <label class="control-label col-sm-4"for="audio">Escolha uma música de fundo:</label>
