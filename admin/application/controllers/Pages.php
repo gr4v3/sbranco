@@ -41,7 +41,14 @@ class Pages extends CI_Controller {
                 $this->load->view('admin', array('page' => $this->load->view('pages/form/item', $page, TRUE)));
             }
 	}
-        public function upload() {
+        public function update() {
+            $page_form = array_flip($this->input->post('page'));
+            $this->load->library('page');
+            $pages = $this->page->items();
+            foreach($pages as &$item) {
+                $item->index = $page_form[$item->link];
+                $this->page->set($item->link, $item);
+            }
             
         }
 }

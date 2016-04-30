@@ -144,5 +144,10 @@ var Gallery = {
 
         aParent.replaceChild(b,aHolder);
         bParent.replaceChild(a,bHolder);
+    },
+    drop:function(event) {
+        console.log('gallery item dropped!');
+        var pagesform = document.getElementById('pages-form');
+        if (pagesform) pagesform.submit();
     }
 };

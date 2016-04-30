@@ -7,13 +7,7 @@
  */
 ?>
 <div class="col-md-2 item">
-    <a href="/admin/pages/index/<?php echo $link; ?>">
-        <?php 
-            if (empty($items)) {
-                ?><div><?php echo $title; ?></div><?php
-            } else {
-                ?><div style="background-image:url(<?php echo '/assets/pages/' . $link . '/' . current($items); ?>);"></div><?php
-            }
-        ?>
-    </a>    
+    <div onclick="window.location = '/admin/pages/index/<?php echo $link; ?>';" ondragover="Gallery.allowdrop(event)" ondrop="Gallery.drop(event);" draggable="true" ondragstart="Gallery.dragstart(event)" ondragenter="Gallery.dragenter(event);" style="background-image:url(<?php echo '/assets/pages/' . $link . '/' . current($items); ?>);">
+        <input type="hidden" name="page[]" value="<?php echo $link; ?>" />
+    </div>   
 </div>

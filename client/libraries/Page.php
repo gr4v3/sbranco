@@ -19,7 +19,13 @@ class Page {
             if (in_array($page, array('.', '..'))) $page = NULL;
             else $page = $this->get($page);
         }
-        return array_values(array_filter($pages));
+        $pages_filtered = array_filter($pages);
+        $pages_result = array();
+        foreach($pages_filtered as $item) {
+            $pages_result[(int) $item->index] = $item;
+        }
+        ksort($pages_result);
+        return array_values($pages_result);
     }
     public function set($name = NULL, $options = array()) {
         $page_path = FCPATH . 'assets/pages/' . $name;
