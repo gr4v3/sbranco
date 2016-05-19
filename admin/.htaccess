@@ -3,7 +3,8 @@ AuthType Basic
 AuthName "SandraBranco Backoffice"
 AuthUserFile B:\httpd\sbranco\admin\.htpasswd
 Require valid-user
-
+# user sbranco
+# pass sbranco87admin
 <IfModule mod_rewrite.c>
         RewriteEngine On
         RewriteBase /
