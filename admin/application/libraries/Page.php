@@ -37,4 +37,25 @@ class Page {
         if (!is_dir($page_path)) return NULL;
         return json_decode(file_get_contents($page_path. '/.options'));
     }
+    public function del($name = NULL) {
+        $page_path = CLIENTPATH . 'assets/pages/' . $name;
+        if (!is_dir($page_path)) return NULL;
+        $this->rrmdir($page_path);
+    }
+    public function rrmdir($src) {
+        $dir = opendir($src);
+        while(false !== ( $file = readdir($dir)) ) {
+            if (( $file != '.' ) && ( $file != '..' )) {
+                $full = $src . '/' . $file;
+                if ( is_dir($full) ) {
+                    rrmdir($full);
+                }
+                else {
+                    unlink($full);
+                }
+            }
+        }
+        closedir($dir);
+        rmdir($src);
+    }
 }

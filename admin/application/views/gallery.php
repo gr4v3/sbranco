@@ -14,6 +14,9 @@
                 <div class="fa fa-plus"></div>
             </a>
         </div>
+        <div ondrop="Gallery.clear()" ondragover="Gallery.allowdrop(event)" class="col-md-2 item fa fa-trash">
+            <div>arraste para aqui se deseja apagar a foto</div>
+        </div>
         <?php 
             echo $items;
         ?>

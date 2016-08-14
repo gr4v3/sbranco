@@ -33,11 +33,16 @@ $(document).ready(function() {
         history.pushState(null, null, this.href);
         e.preventDefault();
         $('.content').load(this.href + '?type=async', function() {
+            var $mobile = $('#mobile');
+            if ($mobile.length) {
+                $mobile[0].checked = false;
+            }
             $(document.body).trigger('load');
         });
         var $this = $(this);
             $this.parent().parent().find('a').removeClass('active');
             $this.addClass('active');
+        
     });
     // check for the idler
     setInterval(function() {
@@ -47,6 +52,12 @@ $(document).ready(function() {
             autobrowse.start();
         }
     }, 5000);
+    
+    
+    if (window.location.pathname === '/') {
+        $('.nav li:first-child a').trigger('click');
+    }
+    
 });
 
 var autobrowse = {

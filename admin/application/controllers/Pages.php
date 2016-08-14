@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pages extends CI_Controller {
+class Pages extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -44,13 +44,14 @@ class Pages extends CI_Controller {
             }
 	}
         public function update() {
-            $page_form = array_flip($this->input->post('page'));
             $this->load->library('page');
             $pages = $this->page->items();
-            foreach($pages as &$item) {
-                $item->index = $page_form[$item->link];
-                $this->page->set($item->link, $item);
+            $currentPages = array_map(function($item) {return $item->link;}, $pages);
+            $postpages = $this->input->post('page');
+            if (empty($postpages)) $postpages = array();
+            $toDelete = array_diff_key(array_flip($currentPages), array_flip($postpages));
+            foreach(array_flip($toDelete) as $link) {
+                $this->page->del($link);
             }
-            
         }
 }

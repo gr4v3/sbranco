@@ -124,10 +124,18 @@ var Gallery = {
         console.log('gallery dragenter');
         if (!Gallery.prev) return false;
         Gallery.swap(event.target, Gallery.prev);
+        var form = document.getElementsByTagName('form');
+        if (form.length) {
+            form[0].submit();
+        }
     },
     clear:function() {
         console.log('gallery clear');
         if (Gallery.prev) Gallery.prev.parentNode.parentNode.removeChild(Gallery.prev.parentNode);
+        var form = document.getElementsByTagName('form');
+        if (form.length) {
+            form[0].submit();
+        }
     },
     allowdrop:function(event) {
         event.preventDefault();
@@ -151,3 +159,14 @@ var Gallery = {
         if (pagesform) pagesform.submit();
     }
 };
+$(document).ready(function() {
+    console.log('admin');
+    
+    $('#file-select').on('change', function() {
+        
+        this.form.submit();
+        
+    });
+    
+});
+
