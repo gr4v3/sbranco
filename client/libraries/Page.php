@@ -22,6 +22,7 @@ class Page {
         $pages_filtered = array_filter($pages);
         $pages_result = array();
         foreach($pages_filtered as $item) {
+            
             $pages_result[(int) $item->index] = $item;
         }
         ksort($pages_result);
