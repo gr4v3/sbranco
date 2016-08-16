@@ -21,6 +21,8 @@ class Audio extends MY_Controller {
 	public function index($index = NULL)
 	{
             
+            
+            $this->load->view('admin', array('page' => ''));
 	}
         public function update() {
             

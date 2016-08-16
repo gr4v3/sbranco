@@ -32,7 +32,7 @@ and open the template in the editor.
         <label class="fa trigger" for="mobile"></label>
         <input type="checkbox" id="mobile" style="display:none;" />
         <div class="main">
-            <div class="col-md-12">
+            <div class="title col-md-12">
                 <a href="/">
                     <div class="author col-md-12">
                         <h1>sandra branco</h1>
