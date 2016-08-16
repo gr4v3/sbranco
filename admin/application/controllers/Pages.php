@@ -53,5 +53,13 @@ class Pages extends MY_Controller {
             foreach(array_flip($toDelete) as $link) {
                 $this->page->del($link);
             }
+            foreach($pages as $item) {
+                foreach($postpages as $pageindex => $pagelink) {
+                    if ($pagelink === $item->link) {
+                        $item->index = $pageindex;
+                        $this->page->set($item->link, $item);
+                    }
+                }
+            }
         }
 }

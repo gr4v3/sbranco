@@ -87,7 +87,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                                     </a>
                                 </li>
-                                
+                                <li class="active">
+                                    <a href="/admin/audio">
+                                        <i class="fa fa-music"></i> <span>Audios</span>
+                                    </a>
+                                </li>
 
                             </ul>
                         </section>
