@@ -32,7 +32,8 @@ $(document).ready(function() {
     $('*[data-type="async"]').on('click', function(e) {
         history.pushState(null, null, this.href);
         e.preventDefault();
-        $('.content').load(this.href + '?type=async', function() {
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        $('.content').load(this.href + '/' + (h*0.7) + '?type=async', function() {
             var $mobile = $('#mobile');
             if ($mobile.length) {
                 $mobile[0].checked = false;
