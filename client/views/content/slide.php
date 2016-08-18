@@ -11,7 +11,7 @@
         <tr>
         <?php 
             foreach($items as $photo) {
-                echo '<td class="item view"><img src="/img-auto-700/assets/pages/'.$link.'/'.$photo.'" alt=""/></td>';
+                echo '<td class="item view"><img src="/img-auto-'.$height.'/assets/pages/'.$link.'/'.$photo.'" alt=""/></td>';
             }
         ?>    
         </tr>   
