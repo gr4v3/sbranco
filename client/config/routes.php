@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['(.+)'] = 'section/page/$1';
+$route['(.+)/(.+)'] = 'section/page/$1/$2';
