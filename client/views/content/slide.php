@@ -21,6 +21,9 @@
     body.body {
         background-color: <?php echo $background; ?>;
     }
+    a {
+        color:<?php echo $fontcolor; ?> !important;
+    }
 </style>
 <script type="text/javascript">
 document.body.onload = function() {
