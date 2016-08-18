@@ -36,7 +36,7 @@ and open the template in the editor.
                 <a href="/">
                     <div class="author col-md-12">
                         <h1>sandra branco</h1>
-                        <h2>aka A Fotografa</h2>
+                        <h2>aka A Fotógrafa</h2>
                     </div>
                 </a>
             </div>
