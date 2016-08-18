@@ -21,7 +21,7 @@
     body.body {
         background-color: <?php echo $background; ?>;
     }
-    a {
+    a, h1, h2 {
         color:<?php echo $fontcolor; ?> !important;
     }
 </style>
