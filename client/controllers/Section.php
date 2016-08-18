@@ -18,7 +18,7 @@ class Section extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function page($pagename = NULL)
+	public function page($pagename = NULL, $height = 700)
 	{
             $type = $this->input->get('type');
             if ($type !== 'async') {
@@ -27,11 +27,13 @@ class Section extends CI_Controller {
                 $items = $this->page->items();
                 $this->output->set_output_data('menu', $this->load->view('menu', array('items' => $items), TRUE), TRUE);
                 $page = $this->page->get($pagename);
+                $page->height = $height;
                 $this->output->set_output_data('content', $this->load->view('content/' . $page->type, $page, TRUE), TRUE);
             } else {
                 $this->output->set_template('async');
                 $this->load->library('page');
                 $page = $this->page->get($pagename);
+                $page->height = $height;
                 if ($page) {
                     $this->load->view('content/' . $page->type, $page);
                 }
