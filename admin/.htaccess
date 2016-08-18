@@ -1,7 +1,7 @@
 
 AuthType Basic
 AuthName "SandraBranco Backoffice"
-AuthUserFile home/sbranco/admin/.htpasswd
+AuthUserFile /home/sbranco/admin/.htpasswd
 Require valid-user
 # user sbranco
 # pass sbranco87admin
