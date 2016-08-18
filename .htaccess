@@ -1,6 +1,7 @@
 <IfModule mod_rewrite.c>
         RewriteEngine On
         RewriteBase /
+        RewriteRule ^img-([0-9]{1,4}|\bauto\b)?-([0-9]{1,4}|\bauto\b)?/(([A-Za-z0-9/_-]+).(jpg|gif|png))?$ resize.php?width=$1&height=$2&imgfile=$3
         # Directs all EE web requests through the site index file
         RewriteCond %{REQUEST_FILENAME} !-f
         RewriteCond %{REQUEST_FILENAME} !-d
