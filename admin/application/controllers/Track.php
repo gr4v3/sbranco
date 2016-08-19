@@ -21,7 +21,15 @@ class Track extends MY_Controller {
 	public function index()
 	{
 	    $this->load->library('media');
-            $medias = $this->media->items();	            
+            $medias = $this->media->items();
+            
+            $postmedias = $this->input->post('media');
+            if (empty($postmedias)) $postpages = array();
+            $toDelete = array_diff_key(array_flip($medias), array_flip($postmedias));
+            foreach(array_flip($toDelete) as $link) {
+                unlink($link);
+            }
+            
             foreach($medias as $filename) {
                 $gallery_items[] = $this->load->view('media/item', array('file' => $filename), TRUE);
             }
