@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 ?>
-<form id="pages-form" target="pages-form-target" enctype="multipart/form-data" action="/admin/track/update" method="post">
+<form id="pages-form" target="pages-form-target" enctype="multipart/form-data" action="/admin/track" method="post">
 <div class="container-fluid">
     <div class="col-md-12 gallery">
         <div class="col-md-2 item add">
