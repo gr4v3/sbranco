@@ -17,8 +17,8 @@ class Track extends MY_Controller {
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 
-	public function index($index = NULL)
+	*/
+	public function add($index = NULL)
 	{
             $this->load->library('media');
             if (empty($index)) {
@@ -43,7 +43,7 @@ class Track extends MY_Controller {
                 
                 $this->load->view('admin', array('page' => $this->load->view('media/form/item', $page, TRUE)));
             }
-	}*/
+	}
 	public function index()
 	{
             $this->load->library('media');
