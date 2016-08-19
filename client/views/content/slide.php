@@ -36,7 +36,7 @@
 document.body.onload = function() {
     console.log('slide ready!');
     var track = document.getElementById('track');
-    <?php if (isset($audio)) { ?>
+    <?php if (isset($audio) || empty($audio)) { ?>
         track.style.display = 'inline';
     var initial_volume = track.volume * 100;
     var volumeinterval = setInterval(function() {
