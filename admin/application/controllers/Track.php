@@ -22,28 +22,9 @@ class Track extends MY_Controller {
 	{
 	    $this->load->library('media');
             $medias = $this->media->items();	            
-            
-            var_dump($medias);
-            
+            foreach($medias as $item) {
+                $gallery_items[] = $this->load->view('media/item', $item, TRUE);
+            }
             $this->load->view('admin', array('page' => 'asdadsa'));
 	}
-        public function update() {
-            $this->load->library('media');
-            $pages = $this->media->items();
-            $currentPages = array_map(function($item) {return $item->link;}, $pages);
-            $postpages = $this->input->post('media');
-            if (empty($postpages)) $postpages = array();
-            $toDelete = array_diff_key(array_flip($currentPages), array_flip($postpages));
-            foreach(array_flip($toDelete) as $link) {
-                $this->media->del($link);
-            }
-            foreach($pages as $item) {
-                foreach($postpages as $pageindex => $pagelink) {
-                    if ($pagelink === $item->link) {
-                        $item->index = $pageindex;
-                        $this->page->set($item->link, $item);
-                    }
-                }
-            }
-        }
 }
