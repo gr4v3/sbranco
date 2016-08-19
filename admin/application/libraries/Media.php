@@ -18,7 +18,7 @@ class Media {
         foreach($audios as &$audio) {
             if (in_array($audio, array('.', '..'))) $audio = NULL;
         }
-        $pages_filtered = array_filter($pages);
-        return $pages_filtered;
+        $audios_filtered = array_filter($audios);
+        return $audios_filtered;
     }
 }
