@@ -29,7 +29,7 @@ class Track extends MY_Controller {
             foreach(array_flip($toDelete) as $link) {
                 $this->media->del($link);
             }
-            
+            $gallery_items = [];
             foreach($medias as $filename) {
                 $gallery_items[] = $this->load->view('media/item', array('file' => $filename), TRUE);
             }
