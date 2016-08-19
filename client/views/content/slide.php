@@ -37,7 +37,7 @@ document.body.onload = function() {
     console.log('slide ready!');
     var track = document.getElementById('track');
     <?php if (isset($audio)) { ?>
-        track.style.display = 'block';
+        track.style.display = 'inline';
     var initial_volume = track.volume * 100;
     var volumeinterval = setInterval(function() {
             if (initial_volume === 0) {
@@ -56,7 +56,7 @@ document.body.onload = function() {
             track.volume = initial_volume / 100;
         },50);
     <?php } else { ?>
-        track.style.display = 'inline';
+        track.style.display = 'none';
     <?php } ?>    
     var $slide = $('.slide');
     var $gallery = $slide.find('.gallery');
