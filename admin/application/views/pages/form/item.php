@@ -37,6 +37,10 @@
         <div class="col-sm-8"><input type="color" class="form-control" id="background" name="page[fontcolor]" value="<?php echo $fontcolor; ?>"></div>
     </div>
     <div class="form-group">
+        <label class="control-label col-sm-4"for="background">Cor da border:</label>
+        <div class="col-sm-8"><input type="color" class="form-control" id="background" name="page[bordercolor]" value="<?php echo isset($fontcolor)?$fontcolor:'#ffffff'; ?>"></div>
+    </div>
+    <div class="form-group">
         <label class="control-label col-sm-4"for="type">Tipo de galeria:</label>
         <div class="col-sm-2">
             <select class="form-control" id="type" name="page[type]">

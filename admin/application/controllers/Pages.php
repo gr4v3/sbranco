@@ -30,6 +30,7 @@ class Pages extends MY_Controller {
                     'audio' => '', 
                     'background' => '#000000', 
                     'fontcolor' => '#ffffff',
+                    'bordercolor' => '#ffffff',
                     'type' => 'slide', 
                     'gallery' => ''
                     ), TRUE)));

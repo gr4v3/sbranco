@@ -61,12 +61,12 @@ body.body {
     position:relative;
 }
 .gallery .item img {
-    width:auto;
-    height: 75vh;
-    border:4px solid white;
-    border-right-width: 6px;
-    border-top-width: 10px;
-    border-bottom-width: 10px;
+    width: auto;
+    height: 80vh;
+    padding: 0px;
+    margin: 0px;
+    border: 5px solid black;
+    border-right-width: 0px;
 }
 .gallery .item.view img {
 }
