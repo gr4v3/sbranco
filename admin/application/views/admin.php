@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <ul class="sidebar-menu">
                                 <li class="active">
                                     <a href="/admin">
-                                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                                        <i class="fa fa-dashboard"></i> <span>Menus</span>
                                     </a>
                                 </li>
                                 <li class="active">
