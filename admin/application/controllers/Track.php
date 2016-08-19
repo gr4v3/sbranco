@@ -18,42 +18,9 @@ class Track extends MY_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	*/
-	public function add($index = NULL)
-	{
-            $this->load->library('media');
-            if (empty($index)) {
-                $pages = $this->media->items();
-                $this->load->view('admin', array('page' => $this->load->view('media/form/item', array(
-                    'index' => count($pages),
-                    'title' => '', 
-                    'link' => '', 
-                    'audio' => '', 
-                    'background' => '#000000', 
-                    'fontcolor' => '#ffffff',
-                    'type' => 'slide', 
-                    'gallery' => ''
-                    ), TRUE)));
-            } else {
-                $page = $this->media->get($index);
-                $gallery_items = array();
-                foreach($page->items as $item) {
-                    $gallery_items[] = $this->load->view('media/form/gallery/item', array('page' => $index, 'src' => $item), TRUE);
-                }
-                $page->gallery = implode('', $gallery_items);
-                
-                $this->load->view('admin', array('page' => $this->load->view('media/form/item', $page, TRUE)));
-            }
-	}
 	public function index()
 	{
-            $this->load->library('media');
-            $items = $this->media->items();
-            $gallery_items = array();
-            foreach($items as $item) {
-                $gallery_items[] = $this->load->view('media/item', $item, TRUE);
-            }
-            $gallery = $this->load->view('gallery', array('items' => implode('', $gallery_items)), TRUE);
-            $this->load->view('admin', array('page' => $gallery));
+            $this->load->view('admin', array('page' => 'asdadsa'));
 	}
         public function update() {
             $this->load->library('media');
