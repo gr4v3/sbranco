@@ -28,7 +28,4 @@ class Track extends MY_Controller {
             $gallery = $this->load->view('media/gallery', array('items' => implode('', $gallery_items)), TRUE);
             $this->load->view('admin', array('page' => $gallery));
 	}
-	public function update() {
-		
-	}
 }
