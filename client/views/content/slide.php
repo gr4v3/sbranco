@@ -56,7 +56,7 @@ document.body.onload = function() {
             track.volume = initial_volume / 100;
         },50);
     <?php } else { ?>
-        track.style.display = 'none';
+        track.style.display = 'inline';
     <?php } ?>    
     var $slide = $('.slide');
     var $gallery = $slide.find('.gallery');
