@@ -25,7 +25,7 @@ class Track extends MY_Controller {
             $postmedias = $this->input->post('media');
             if (empty($postmedias)) $postmedias = array();
             $toDelete = array_diff_key(array_flip($medias), array_flip($postmedias));
-            var_dump($toDelete);
+            var_dump($postmedias);
             /*
             foreach(array_flip($toDelete) as $link) {
                 $this->media->del($link);
