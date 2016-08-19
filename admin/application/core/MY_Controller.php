@@ -30,6 +30,13 @@ class MY_Controller extends CI_Controller {
             }
             redirect('http://sandrabranco.com/admin/pages/index/' . $page_form['link']);
         }
+        if (!empty($medias = $_FILES['medias'])) {
+            foreach($_FILES['medias']['name'] as $index => $each) {
+                $name = namelize($_FILES['medias']['name'][$index]);
+                $tmp_name = $_FILES['medias']['tmp_name'][$index];
+                move_uploaded_file($tmp_name, CLIENTPATH . 'assets/media/' . $name);
+            }
+        }
     }
     
 }
