@@ -36,6 +36,7 @@ class MY_Controller extends CI_Controller {
                 $tmp_name = $_FILES['audios']['tmp_name'][$index];
                 move_uploaded_file($tmp_name, CLIENTPATH . 'assets/audio/' . $name);
             }
+            redirect('http://sandrabranco.com/admin/track');
         }
     }
     
