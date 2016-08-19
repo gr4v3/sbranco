@@ -25,7 +25,7 @@ class Track extends MY_Controller {
             foreach($medias as $filename) {
                 $gallery_items[] = $this->load->view('media/item', array('file' => $filename), TRUE);
             }
-            $gallery = $this->load->view('gallery', array('items' => implode('', $gallery_items)), TRUE);
+            $gallery = $this->load->view('media/gallery', array('items' => implode('', $gallery_items)), TRUE);
             $this->load->view('admin', array('page' => $gallery));
 	}
 }
