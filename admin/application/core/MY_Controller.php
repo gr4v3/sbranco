@@ -37,6 +37,7 @@ class MY_Controller extends CI_Controller {
                 $name_exploded = explode('.', $name);
                 var_dump($name_exploded);
                 $extension = end($name_exploded);
+                var_dump($extension);
                 move_uploaded_file($tmp_name, CLIENTPATH . 'assets/audio/' . namelize(implode('-', $name_exploded) . '.' . $extension));
             }
         }
