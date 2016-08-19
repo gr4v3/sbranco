@@ -20,6 +20,7 @@ class Track extends MY_Controller {
 	*/
 	public function index()
 	{
+		var_dump(2);
 	    $this->load->library('media');
             $medias = $this->media->items();	            
             foreach($medias as $filename) {
