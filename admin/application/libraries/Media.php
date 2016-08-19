@@ -19,6 +19,7 @@ class Media {
             if (in_array($audio, array('.', '..'))) $audio = NULL;
         }
         $audios_filtered = array_filter($audios);
+        ksort($audios_filtered);
         return $audios_filtered;
     }
 }
