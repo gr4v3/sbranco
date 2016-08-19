@@ -22,10 +22,10 @@ class Track extends MY_Controller {
 	{
 	    $this->load->library('media');
             $medias = $this->media->items();
-            var_dump($medias);
             $postmedias = $this->input->post('media');
-            var_dump($postmedias);
             if (empty($postmedias)) $postmedias = array();
+            $all = array_unique(array_merge($medias, $postmedias));
+            var_dump($all);
             $toDelete = array_diff_key(array_flip($medias), array_flip($postmedias));
             foreach(array_flip($toDelete) as $link) {
                 $this->media->del($link);
