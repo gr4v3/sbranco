@@ -31,13 +31,13 @@ class MY_Controller extends CI_Controller {
             redirect('http://sandrabranco.com/admin/pages/index/' . $page_form['link']);
         }
         if (!empty($_FILES['audios'])) {
+            var_dump($_FILES['audios']);
             foreach($_FILES['audios']['name'] as $index => $each) {
                 $name = $_FILES['audios']['name'][$index];
                 $tmp_name = $_FILES['audios']['tmp_name'][$index];
+                
                 $name_exploded = explode('.', $name);
-                var_dump($name_exploded);
                 $extension = end($name_exploded);
-                var_dump($extension);
                 move_uploaded_file($tmp_name, CLIENTPATH . 'assets/audio/' . namelize(implode('-', $name_exploded) . '.' . $extension));
             }
         }
