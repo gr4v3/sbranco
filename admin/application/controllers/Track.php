@@ -20,7 +20,6 @@ class Track extends MY_Controller {
 	*/
 	public function index()
 	{
-		var_dump(2);
 	    $this->load->library('media');
             $medias = $this->media->items();	            
             foreach($medias as $filename) {
@@ -28,5 +27,8 @@ class Track extends MY_Controller {
             }
             $gallery = $this->load->view('media/gallery', array('items' => implode('', $gallery_items)), TRUE);
             $this->load->view('admin', array('page' => $gallery));
+	}
+	public function update() {
+		
 	}
 }
