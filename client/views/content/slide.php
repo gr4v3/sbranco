@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var_dump($audio);
+var_dump(trim($audio));
 ?>
 <div class="slide">
     <table class="gallery" cellpadding="0" cellspacing="0" border="0">
