@@ -7,5 +7,7 @@
  */
 ?>
 <div class="col-md-2 item">
-    <?php echo $file; ?> 
+    <div draggable="true" ondragstart="Gallery.dragstart(event)" ondragenter="Gallery.dragenter(event);">
+        <?php echo $file; ?>
+    </div>
 </div>
