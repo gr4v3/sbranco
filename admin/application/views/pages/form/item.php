@@ -17,6 +17,7 @@
         <label class="control-label col-sm-4"for="audio">Escolha uma música de fundo:</label>
         <div class="col-sm-2">
             <select class="form-control" id="audio" name="page[audio]">
+                <option>nenhum</option>
                 <?php 
                     $audios = scandir('../assets/audio');
                     foreach($audios as $item) {
