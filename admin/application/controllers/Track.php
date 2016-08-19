@@ -20,6 +20,11 @@ class Track extends MY_Controller {
 	*/
 	public function index()
 	{
+	    $this->load->library('media');
+            $medias = $this->media->items();	            
+            
+            var_dump($medias);
+            
             $this->load->view('admin', array('page' => 'asdadsa'));
 	}
         public function update() {
