@@ -30,7 +30,7 @@ class Welcome extends MY_Controller {
             $gallery = $this->load->view('gallery', array('items' => implode('', $gallery_items)), TRUE);
             $this->load->view('admin', array('page' => $gallery));
 	}
-	public function index()
+	public function audio()
 	{
             $this->load->library('media');
             $items = $this->media->items();
