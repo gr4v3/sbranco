@@ -124,10 +124,6 @@ var Gallery = {
         console.log('gallery dragenter');
         if (!Gallery.prev) return false;
         Gallery.swap(event.target, Gallery.prev);
-        var form = document.getElementsByTagName('form');
-        if (form.length) {
-            form[0].submit();
-        }
     },
     clear:function() {
         console.log('gallery clear');
@@ -153,10 +149,12 @@ var Gallery = {
         aParent.replaceChild(b,aHolder);
         bParent.replaceChild(a,bHolder);
     },
-    drop:function(event) {
+    drop:function() {
         console.log('gallery item dropped!');
-        var pagesform = document.getElementById('pages-form');
-        if (pagesform) pagesform.submit();
+        var form = document.getElementsByTagName('form');
+        if (form.length) {
+            form[0].submit();
+        }
     }
 };
 $(document).ready(function() {
