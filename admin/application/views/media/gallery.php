@@ -5,13 +5,13 @@
  * and open the template in the editor.
  */
 ?>
-<form id="pages-form" target="pages-form-target" action="/admin/track/update" method="post">
+<form id="pages-form" target="pages-form-target" enctype="multipart/form-data" action="/admin/track/update" method="post">
 <div class="container-fluid">
     <div class="col-md-12 gallery">
         <div class="col-md-2 item add">
-            <a href="/admin/track/add">
-                <div class="fa fa-plus"></div>
-            </a>
+                <label class="fa fa-plus" for="file-select">
+                    <input type="file" id="file-select" name="audios[]" multiple style="display:none;"/>
+                </label>
         </div>
         <div ondrop="Gallery.clear()" ondragover="Gallery.allowdrop(event)" class="col-md-2 item fa fa-trash">
             <div>arraste para aqui se deseja apagar a foto</div>
