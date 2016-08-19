@@ -68,6 +68,8 @@ body.body {
     margin: 0px;
     border: 10px solid black;
     border-right-width: 0px;
+    border-top-width: 15px;
+    border-bottom-width: 15px;
 }
 .gallery .item.view img {
 }
