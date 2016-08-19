@@ -28,7 +28,7 @@
 <script type="text/javascript">
 document.body.onload = function() {
     console.log('slide ready!');
-
+    <?php if (isset($audio)) { ?>
     var track = document.getElementById('track');
     var initial_volume = track.volume * 100;
     var volumeinterval = setInterval(function() {
@@ -47,7 +47,7 @@ document.body.onload = function() {
             if (initial_volume < 0) initial_volume = 0;
             track.volume = initial_volume / 100;
         },50);
-        
+    <?php } ?>    
     var $slide = $('.slide');
     var $gallery = $slide.find('.gallery');
     if ($slide.length && $gallery.length) {
