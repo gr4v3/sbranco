@@ -28,7 +28,7 @@
         background-color: <?php echo $bordercolor; ?> !important;
     }
     .gallery .item img {
-        border: 5px solid <?php echo $bordercolor; ?> !important;
+        border-color: <?php echo $bordercolor; ?> !important;
         border-right-width: 0px !important;
     }    
 </style>
