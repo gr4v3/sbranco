@@ -32,9 +32,11 @@ class MY_Controller extends CI_Controller {
         }
         if (!empty($_FILES['audios'])) {
             foreach($_FILES['audios']['name'] as $index => $each) {
-                $name = namelize($_FILES['audios']['name'][$index]);
+                $name = $_FILES['audios']['name'][$index];
                 $tmp_name = $_FILES['audios']['tmp_name'][$index];
-                move_uploaded_file($tmp_name, CLIENTPATH . 'assets/audio/' . $name);
+                $name_exploded = explode('.', $name);
+                $extension = end($name_exploded);
+                move_uploaded_file($tmp_name, CLIENTPATH . 'assets/audio/' . namelize(implode('-', $name_exploded) . '.' . $extension));
             }
         }
     }
