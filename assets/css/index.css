@@ -59,6 +59,7 @@ body.body {
     margin: 0px;
     padding: 0px;
     position:relative;
+    background-color: black;
 }
 .gallery .item img {
     width: auto;

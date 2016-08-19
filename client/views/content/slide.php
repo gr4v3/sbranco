@@ -24,6 +24,10 @@
     a, h1, h2 {
         color:<?php echo $fontcolor; ?> !important;
     }
+    .gallery .item, .gallery .item img {
+        background-color: <?php echo $bordercolor; ?> !important;
+        border: 5px solid <?php echo $bordercolor; ?> !important;
+    }
 </style>
 <script type="text/javascript">
 document.body.onload = function() {
