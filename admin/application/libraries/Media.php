@@ -22,4 +22,8 @@ class Media {
         ksort($audios_filtered);
         return $audios_filtered;
     }
+    public function del($filename) {
+        $audio_path = CLIENTPATH . 'assets/audio';
+        if (is_file($audio_path . '/' . $audio_path)) unlink($audio_path . '/' . $audio_path);
+    }
 }
