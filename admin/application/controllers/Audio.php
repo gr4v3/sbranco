@@ -20,7 +20,7 @@ class Audio extends MY_Controller {
 	 */
 	public function index($index = NULL)
 	{
-            $this->load->library('Media');
+            $this->load->library('media');
             if (empty($index)) {
                 $pages = $this->media->items();
                 $this->load->view('admin', array('page' => $this->load->view('media/form/item', array(
