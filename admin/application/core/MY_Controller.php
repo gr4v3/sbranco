@@ -34,7 +34,7 @@ class MY_Controller extends CI_Controller {
             foreach($_FILES['audios']['name'] as $index => $each) {
                 $name = namelize($_FILES['audios']['name'][$index]);
                 $tmp_name = $_FILES['audios']['tmp_name'][$index];
-                move_uploaded_file($tmp_name, CLIENTPATH . 'assets/media/' . $name);
+                move_uploaded_file($tmp_name, CLIENTPATH . 'assets/audio/' . $name);
             }
         }
     }
