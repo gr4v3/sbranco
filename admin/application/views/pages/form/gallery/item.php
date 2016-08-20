@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 ?>
-<div class="col-md-2 item">
+<div class="col-md-2 item" onmouseup="Gallery.drop()">
     <div draggable="true" ondragstart="Gallery.dragstart(event)" ondragenter="Gallery.dragenter(event);" style="background-image:url(<?php echo '/img-auto-115/assets/pages/' . $page . '/' . $src; ?>);">
         <input type="hidden" name="page[items][]" value="<?php echo $src; ?>" />
     </div>   
