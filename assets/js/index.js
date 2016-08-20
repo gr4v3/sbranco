@@ -39,7 +39,7 @@ $(document).ready(function() {
                 $mobile[0].checked = false;
             }
             gaTrack(this.href, this.title);
-            $(document.body).trigger('load');
+            $(document.body).trigger('page-load');
         });
         var $this = $(this);
             $this.parent().parent().find('a').removeClass('active');

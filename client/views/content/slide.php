@@ -33,8 +33,9 @@
     }    
 </style>
 <script type="text/javascript">
-document.body.onload = function() {
-    console.log('slide ready!');
+    
+$(document.body).on('page-load', function() {
+    console.log('page ready!');
     var track = document.getElementById('track');
     <?php if (isset($audio) && !empty(trim($audio))) { ?>
         track.style.display = 'inline';
@@ -67,5 +68,6 @@ document.body.onload = function() {
         });
     }
     $('.nav li a[title="<?php echo $link; ?>"]').addClass('active');
-};
+});
+    
 </script>
