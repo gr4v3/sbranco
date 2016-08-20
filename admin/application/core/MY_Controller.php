@@ -29,6 +29,7 @@ class MY_Controller extends CI_Controller {
                 $this->page->set($page_form['link'], $page);
             }
             //redirect('http://sandrabranco.com/admin/pages/index/' . $page_form['link']);
+            die();
         }
         if (!empty($_FILES['audios'])) {
             foreach($_FILES['audios']['name'] as $index => $each) {
