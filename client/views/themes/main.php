@@ -12,9 +12,12 @@ and open the template in the editor.
         <title>A fotógrafa</title>
         <meta charset="UTF-8">
         <?php 
-            foreach($meta['og:image'] as $each) {
-                echo '<meta property="og:image" content="'.$each.'" />';
+            if (isset($meta['og:image'])) {
+                foreach($meta['og:image'] as $each) {
+                    echo '<meta property="og:image" content="'.$each.'" />';
+                }
             }
+            
         ?>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
