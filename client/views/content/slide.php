@@ -34,7 +34,7 @@
 </style>
 <script type="text/javascript">
     
-$(document.body).on('page-load', function() {
+jQuery(document.body).on('page-load', function() {
     console.log('page ready!');
     var track = document.getElementById('track');
     <?php if (isset($audio) && !empty(trim($audio))) { ?>
