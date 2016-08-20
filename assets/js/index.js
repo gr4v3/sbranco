@@ -38,7 +38,6 @@ $(document).ready(function() {
             if ($mobile.length) {
                 $mobile[0].checked = false;
             }
-            gaTrack(this.href, this.title);
             $(document.body).trigger('page-load');
         });
         var $this = $(this);
