@@ -6,4 +6,7 @@
         RewriteCond %{REQUEST_FILENAME} !-f
         RewriteCond %{REQUEST_FILENAME} !-d
         RewriteRule ^(.*)$ /index.php/$1 [L]
+
+        RewriteCond %{HTTP_HOST} ^www\.domain\.tld$ [NC]
+        RewriteRule ^(.*)$ http://sandrabranco.com/$1 [R=301,L]
 </IfModule>
