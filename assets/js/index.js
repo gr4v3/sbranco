@@ -38,7 +38,7 @@ $(document).ready(function() {
             if ($mobile.length) {
                 $mobile[0].checked = false;
             }
-            ga('send', 'pageview');
+            gaTrack(this.href, this.title);
             $(document.body).trigger('load');
         });
         var $this = $(this);
