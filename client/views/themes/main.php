@@ -9,7 +9,7 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:fb="http://ogp.me/ns/fb#">
     <head>
-        <title>A fotógrafa</title>
+        <title>A Fotógrafa</title>
         <meta charset="UTF-8">
         <?php 
             if (isset($meta['og:image'])) {
