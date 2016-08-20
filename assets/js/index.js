@@ -38,6 +38,7 @@ $(document).ready(function() {
             if ($mobile.length) {
                 $mobile[0].checked = false;
             }
+            ga('send', 'pageview');
             $(document.body).trigger('load');
         });
         var $this = $(this);
@@ -115,3 +116,14 @@ var autobrowse = {
         } else return false;
     }
 };
+
+function gaTracker(id){
+  $.getScript('//www.google-analytics.com/analytics.js'); // jQuery shortcut
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments);};ga.l=+new Date;
+  ga('create', id, 'auto');
+  ga('send', 'pageview');   
+}
+function gaTrack(path, title) {
+  ga('set', { page: path, title: title });
+  ga('send', 'pageview');
+}

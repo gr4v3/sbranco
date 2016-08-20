@@ -71,5 +71,8 @@ and open the template in the editor.
          </audio>
         </div>
         <div class="fb-like" data-href="https://sandrabranco.com" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+        <script type="text/javascript">
+            gaTracker('UA-82821472-1');
+        </script>
     </body>
 </html>
