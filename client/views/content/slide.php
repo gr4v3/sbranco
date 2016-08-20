@@ -68,6 +68,7 @@ jQuery(document.body).on('page-load', function() {
         });
     }
     $('.nav li a[title="<?php echo $link; ?>"]').addClass('active');
+    gaTracker('UA-82821472-1');
     gaTrack('/<?php echo $link; ?>', '<?php echo $title; ?>');
     $(document.body).off('page-load');
 });
