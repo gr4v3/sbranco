@@ -35,7 +35,7 @@
     </div>
     <div class="form-group">
         <label class="control-label col-sm-4"for="background">Cor da letra:</label>
-        <div class="col-sm-8"><input type="color" class="form-control" id="background" name="page[fontcolor]" value="<?php echo $fontcolor; ?>"></div>
+        <div class="col-sm-8"><input type="color" class="form-control" id="background" name="page[fontcolor]" value="<?php echo isset($fontcolor)?$fontcolor:'#ffffff'; ?>"></div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-4"for="background">Cor da border:</label>
