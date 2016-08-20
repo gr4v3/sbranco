@@ -19,8 +19,7 @@ and open the template in the editor.
     display:block;
 }
 .gallery .item div,
-.gallery .item label {
-    width: 100%;
+.gallery .item label  {
     height: 20vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,7 +32,6 @@ and open the template in the editor.
 .gallery .item:hover,
 .gallery .item.fa-trash {
     opacity:1;
-        
 }
 .gallery .item.add .fa-plus {
     background-color: cornflowerblue;

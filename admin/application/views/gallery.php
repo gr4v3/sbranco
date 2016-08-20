@@ -8,7 +8,7 @@
 ?>
 <form id="pages-form" target="pages-form-target" action="/admin/pages/update" method="post">
 <div class="container-fluid">
-    <div class="col-md-12 gallery">
+    <div class="container-fluid gallery">
         <div class="col-md-2 item add">
             <a href="/admin/pages/index">
                 <div class="fa fa-plus"></div>
