@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 ?>
-<form action="http://sandrabranco.com/admin/pages/index/<?php echo $link; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+<form target="pages-form-target" action="http://sandrabranco.com/admin/pages/index/<?php echo $link; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
         <label class="control-label col-sm-4"for="title">Nome do menu:</label>
         <div class="col-sm-6"><input type="text" class="form-control" id="title" name="page[title]" value="<?php echo $title; ?>"></div> 
@@ -75,5 +75,6 @@
         </div>
       </div>
 </form>
+<iframe name="pages-form-target" style="display:none;"></iframe>
 
 
