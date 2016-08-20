@@ -6,10 +6,17 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
     <head>
         <title>A fotógrafa</title>
         <meta charset="UTF-8">
+        <?php 
+            foreach($meta['og:image'] as $each) {
+                echo '<meta property="og:image" content="'.$each.'" />';
+            }
+        ?>
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/assets/css/index.css" rel="stylesheet" type="text/css"/>
         <link href="/assets/css/media.css" rel="stylesheet" type="text/css"/>

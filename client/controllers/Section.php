@@ -20,6 +20,7 @@ class Section extends CI_Controller {
 	 */
 	public function page($pagename = NULL, $height = 700)
 	{
+            
             $type = $this->input->get('type');
             if ($type !== 'async') {
                 $this->output->set_template('main');
@@ -28,6 +29,11 @@ class Section extends CI_Controller {
                 $this->output->set_output_data('menu', $this->load->view('menu', array('items' => $items), TRUE), TRUE);
                 $page = $this->page->get($pagename);
                 $page->height = $height;
+                $pics = array();
+                foreach($page->items as $image) {
+                    $pics[] = 'http://sandrabranco.com/img-auto-768/assets/pages/'.$page->link.'/' . $image; 
+                }
+                $this->output->set_meta('og:image', $pics);
                 $this->output->set_output_data('content', $this->load->view('content/' . $page->type, $page, TRUE), TRUE);
             } else {
                 $this->output->set_template('async');
