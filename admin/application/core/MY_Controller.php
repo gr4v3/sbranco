@@ -28,7 +28,7 @@ class MY_Controller extends CI_Controller {
                 $page->items = array_merge($photos, $page->items);
                 $this->page->set($page_form['link'], $page);
             }
-            redirect('http://sandrabranco.com/admin/pages/index/' . $page_form['link']);
+            //redirect('http://sandrabranco.com/admin/pages/index/' . $page_form['link']);
         }
         if (!empty($_FILES['audios'])) {
             foreach($_FILES['audios']['name'] as $index => $each) {
