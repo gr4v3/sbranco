@@ -69,6 +69,7 @@ $(document.body).on('page-load', function() {
     }
     $('.nav li a[title="<?php echo $link; ?>"]').addClass('active');
     gaTrack('/<?php echo $link; ?>', '<?php echo $title; ?>');
+    $(document.body).off('page-load');
 });
     
 </script>
