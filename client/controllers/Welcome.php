@@ -25,5 +25,12 @@ class Welcome extends CI_Controller {
             $items = $this->page->items();
             $this->output->set_output_data('menu', $this->load->view('menu', array('items' => $items), TRUE), TRUE);
             $this->output->set_output_data('content', '', TRUE);
+            $pics = array();
+            foreach($items as $page) {
+                foreach($page->items as $image) {
+                    $pics[] = 'http://sandrabranco.com/img-auto-768/assets/pages/'.$page->link.'/' . $image; 
+                }
+            }
+            $this->output->set_meta('og:image', $pics);
 	}
 }
