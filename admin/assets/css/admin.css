@@ -71,3 +71,16 @@ input[type="color"] {
     text-align: center;
     font-family: 'Lato', sans-serif;
 }
+
+
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) { 
+    .gallery .item.add .fa-plus {
+        font-size: 5em;
+    }
+    .gallery .item.fa-trash div {
+        font-size: 1.2em;
+    }
+    .fa-trash:before {
+        font-size: 4em;
+    }
+}
