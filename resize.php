@@ -37,7 +37,7 @@ if (!is_file($image)) {
 }
 
 include_once 'SimpleImage.php';
-
+$cache_file = null;
 if (is_file("cache/$width-$height-$filename")) $cache_file = "cache/$width-$height-$filename";
 else if (is_file($root . "/cache/$width-$height-$filename")) $cache_file = $root . "/cache/$width-$height-$filename";
 
