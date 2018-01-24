@@ -45,7 +45,7 @@ body.body {
     right:0px;
 }
 .gallery {
-    background-color:white;
+    /*background-color:white;*/
 }
 .gallery * {
     -webkit-transform: translateZ(0);
