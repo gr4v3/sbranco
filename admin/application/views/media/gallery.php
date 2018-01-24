@@ -13,9 +13,11 @@
                     <input type="file" id="file-select" name="audios[]" multiple style="display:none;"/>
                 </label>
         </div>
+        <!--
         <div ondrop="Gallery.clear()" ondragover="Gallery.allowdrop(event)" class="col-md-2 item fa fa-trash">
-            <div>arraste para aqui se deseja apagar a foto</div>
+            <div>arraste para aqui se deseja apagar o ficheiro</div>
         </div>
+        -->
         <?php 
             echo $items;
         ?>

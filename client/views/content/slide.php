@@ -33,14 +33,13 @@
     }    
 </style>
 <script type="text/javascript">
-    
-jQuery(document.body).on('page-load', function() {
-    console.log('page ready!');
-    var track = document.getElementById('track');
-    <?php if (isset($audio) && !empty(trim($audio))) { ?>
+    var pageLoad = function() {
+        console.log('page ready!');
+        var track = document.getElementById('track');
+        <?php if (isset($audio) && !empty(trim($audio))) { ?>
         track.style.display = 'inline';
-    var initial_volume = track.volume * 100;
-    var volumeinterval = setInterval(function() {
+        var initial_volume = track.volume * 100;
+        var volumeinterval = setInterval(function() {
             if (initial_volume === 0) {
                 clearInterval(volumeinterval);
                 track.src =  '/assets/audio/<?php echo $audio; ?>';
@@ -56,20 +55,20 @@ jQuery(document.body).on('page-load', function() {
             if (initial_volume < 0) initial_volume = 0;
             track.volume = initial_volume / 100;
         },50);
-    <?php } else { ?>
+        <?php } else { ?>
         track.style.display = 'none';
-    <?php } ?>    
-    var $slide = $('.slide');
-    var $gallery = $slide.find('.gallery');
-    if ($slide.length && $gallery.length) {
-        $slide.swipe({
-            swipeLeft: autobrowse.left,
-            swipeRight: autobrowse.right
-        });
+        <?php } ?>
+        var $slide = $('.slide');
+        var $gallery = $slide.find('.gallery');
+        if ($slide.length && $gallery.length) {
+            $slide.swipe({
+                swipeLeft: autobrowse.left,
+                swipeRight: autobrowse.right
+            });
+        }
+        $('.nav li a[title="<?php echo $link; ?>"]').addClass('active');
+        gaTrack('/<?php echo $link; ?>', '<?php echo $title; ?>');
+        $(document.body).off('page-load');
     }
-    $('.nav li a[title="<?php echo $link; ?>"]').addClass('active');
-    gaTrack('/<?php echo $link; ?>', '<?php echo $title; ?>');
-    $(document.body).off('page-load');
-});
-    
+    if (window.jQuery) pageLoad();
 </script>
