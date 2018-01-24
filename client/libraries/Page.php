@@ -13,7 +13,7 @@ class Page {
     }
     public function items() {
         $pages_path = FCPATH . 'assets/pages';
-        if (!is_dir($pages_path)) mkdir($pages_path, 0777, TRUE);
+        if (!is_dir($pages_path)) mkdir($pages_path, 0775, TRUE);
         $pages = scandir($pages_path);
         foreach($pages as &$page) {
             if (in_array($page, array('.', '..'))) $page = NULL;
@@ -30,7 +30,7 @@ class Page {
     }
     public function set($name = NULL, $options = array()) {
         $page_path = FCPATH . 'assets/pages/' . $name;
-        if (!is_dir($page_path)) mkdir($page_path, 0777, TRUE);
+        if (!is_dir($page_path)) mkdir($page_path, 0775, TRUE);
         file_put_contents($page_path. '/.options', json_encode($options));
         file_put_contents($page_path. '/.htaccess', 'RewriteRule ^img-([0-9]{1,4}|\bauto\b)?-([0-9]{1,4}|\bauto\b)?/(([A-Za-z0-9/_-]+).(jpg|gif|png))?$ /home/sbranco/resize.php?width=$1&height=$2&imgfile=$3');
     }
