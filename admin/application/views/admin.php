@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="/admin/assets/css/iCheck/all.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <!-- <link href="/admin/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" /> -->
-    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="/admin/assets/css/style.css" rel="stylesheet" type="text/css" />
     <link href="/admin/assets/css/admin.css" rel="stylesheet" type="text/css" />
@@ -107,7 +107,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
         <!-- jQuery 2.0.2 -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
         <!-- jQuery UI 1.10.3 -->
         <script src="/admin/assets/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
