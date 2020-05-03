@@ -223,14 +223,14 @@ let menuEngage = function(pages) {
                     document.body.classList.remove('menu-open');
                     document.body.classList.add('page');
                     isMobile().then(function() {
-                        fetch('/views/mobile/slide.tmpl').then(function(response) {
+                        fetch('/views/mobile/slide.tmpl?' + Date.now()).then(function(response) {
                             return response.text();
                         }).then(function(template) {
                             renderContent(item, template);
                             menuItemElement.classList.add('active');
                         });
                     }).catch(function() {
-                        fetch('/views/slide.tmpl').then(function(response) {
+                        fetch('/views/slide.tmpl?' + Date.now()).then(function(response) {
                             return response.text();
                         }).then(function(template) {
                             renderContent(item, template);
