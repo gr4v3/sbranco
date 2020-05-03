@@ -2,11 +2,18 @@
         RewriteEngine On
         RewriteBase /
         RewriteRule ^img-([0-9]{1,4}|\bauto\b)?-([0-9]{1,4}|\bauto\b)?/(([A-Za-z0-9/_-]+).(jpg|gif|png))?$ resize.php?width=$1&height=$2&imgfile=$3
+
+
+        # Rewrite bots to static pages
+        RewriteCond %{HTTP_USER_AGENT} (facebook|Python|google|yahoo|bingbot|baiduspider|Slackbot)
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^(.*)$ /seo.php/$1  [L]
+
         # Directs all EE web requests through the site index file
         RewriteCond %{REQUEST_FILENAME} !-f
         RewriteCond %{REQUEST_FILENAME} !-d
-        RewriteRule ^(.*)$ /index.php/$1 [L]
+        RewriteRule ^(.*)$ /index.php [L]
 
-        RewriteCond %{HTTP_HOST} ^www\.sandrabranco\.com$ [NC]
-        RewriteRule ^(.*)$ http://sandrabranco.com/$1 [R=301,L]
+        RewriteCond %{HTTP_HOST} ^www\.sandrabranco\.org [NC]
+        RewriteRule ^(.*)$ https://sandrabranco.org/$1 [R=301,L]
 </IfModule>

@@ -1,0 +1,26 @@
+.row img {
+    width: 100%
+}
+@media (min-width: 1460px) {
+    .row img {
+        padding: 2em 18em 0;
+    }
+}
+
+.mainmenu a:after {
+    content: '/';
+    left: 4px;
+    position: relative;
+    color: black;
+}
+.mainmenu a:last-child:after {
+    content: ''
+}
+body .mainmenu a:hover,
+body .mainmenu a.active {
+    opacity: 1;
+}
+
+body .mainmenu a:first-child span {
+    opacity: 0.5;
+}

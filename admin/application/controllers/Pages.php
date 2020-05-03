@@ -27,10 +27,13 @@ class Pages extends MY_Controller {
                     'index' => count($pages),
                     'title' => '', 
                     'link' => '', 
-                    'audio' => '', 
+                    'audio' => '',
+                    'description' => '',
                     'background' => '#000000', 
                     'fontcolor' => '#ffffff',
                     'bordercolor' => '#ffffff',
+                    'headercolor' => '#ffffff',
+                    'headerbackground' => '#ffffff',
                     'type' => 'slide', 
                     'gallery' => ''
                     ), TRUE)));

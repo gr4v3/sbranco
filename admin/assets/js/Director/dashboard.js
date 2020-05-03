@@ -5,115 +5,8 @@
  *      This is a demo file used only for the main dashboard (index.html)
  **/
 
-$(function() {
-    "use strict";
 
-    //Make the dashboard widgets sortable Using jquery UI
-    $(".connectedSortable").sortable({
-        placeholder: "sort-highlight",
-        connectWith: ".connectedSortable",
-        handle: ".box-header, .nav-tabs",
-        forcePlaceholderSize: true,
-        zIndex: 999999
-    }).disableSelection();
-    $(".connectedSortable .box-header, .connectedSortable .nav-tabs-custom").css("cursor", "move");
-    //jQuery UI sortable for the todo list
-    $(".task-list").sortable({
-        placeholder: "sort-highlight",
-        handle: ".handle",
-        forcePlaceholderSize: true,
-        zIndex: 999999
-    }).disableSelection();
-    ;
-
-    //bootstrap WYSIHTML5 - text editor
-    // $(".textarea").wysihtml5();
-
-    $('.daterange').daterangepicker(
-            {
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
-                    'Last 7 Days': [moment().subtract('days', 6), moment()],
-                    'Last 30 Days': [moment().subtract('days', 29), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
-                },
-                startDate: moment().subtract('days', 29),
-                endDate: moment()
-            },
-    function(start, end) {
-        alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-    });
-
-
-
-    //jvectormap data
-    var visitorsData = {
-        "US": 398, //USA
-        "SA": 400, //Saudi Arabia
-        "CA": 1000, //Canada
-        "DE": 500, //Germany
-        "FR": 760, //France
-        "CN": 300, //China
-        "AU": 700, //Australia
-        "BR": 600, //Brazil
-        "IN": 800, //India
-        "GB": 320, //Great Britain
-        "RU": 3000 //Russia
-    };
-    //World map by jvectormap
-
-
-
-
-    //Fix for charts under tabs
-    $('.box ul.nav a').on('shown.bs.tab', function(e) {
-        area.redraw();
-        donut.redraw();
-    });
-
-
-    /* BOX REFRESH PLUGIN EXAMPLE (usage with morris charts) */
-    $("#loading-example").boxRefresh({
-        source: "ajax/dashboard-boxrefresh-demo.php",
-        onLoadDone: function(box) {
-            bar = new Morris.Bar({
-                element: 'bar-chart',
-                resize: true,
-                data: [
-                    {y: '2006', a: 100, b: 90},
-                    {y: '2007', a: 75, b: 65},
-                    {y: '2008', a: 50, b: 40},
-                    {y: '2009', a: 75, b: 65},
-                    {y: '2010', a: 50, b: 40},
-                    {y: '2011', a: 75, b: 65},
-                    {y: '2012', a: 100, b: 90}
-                ],
-                barColors: ['#00a65a', '#f56954'],
-                xkey: 'y',
-                ykeys: ['a', 'b'],
-                labels: ['CPU', 'DISK'],
-                hideHover: 'auto'
-            });
-        }
-    });
-
-    /* The todo list plugin */
-    $(".todo-list").todolist({
-        onCheck: function(ele) {
-            console.log("The element has been checked")
-        },
-        onUncheck: function(ele) {
-            //console.log("The element has been unchecked")
-        }
-    });
-    
-    
-
-});
-
-var Gallery = {
+let Gallery = {
     prev:false,
     dragstart:function(event) {
         console.log('gallery dragstart');
@@ -128,7 +21,7 @@ var Gallery = {
     clear:function() {
         console.log('gallery clear');
         if (Gallery.prev) Gallery.prev.parentNode.parentNode.removeChild(Gallery.prev.parentNode);
-        var form = document.getElementsByTagName('form');
+        let form = document.getElementsByTagName('form');
         if (form.length) {
             form[0].submit();
         }
@@ -137,11 +30,11 @@ var Gallery = {
         event.preventDefault();
     },
     swap:function(a, b) {
-        var aParent = a.parentNode;
-        var bParent = b.parentNode;
+        let aParent = a.parentNode;
+        let bParent = b.parentNode;
 
-        var aHolder = document.createElement("div");
-        var bHolder = document.createElement("div");
+        let aHolder = document.createElement("div");
+        let bHolder = document.createElement("div");
 
         aParent.replaceChild(aHolder,a);
         bParent.replaceChild(bHolder,b);
@@ -151,7 +44,7 @@ var Gallery = {
     },
     drop:function() {
         console.log('gallery item dropped!');
-        var form = document.getElementsByTagName('form');
+        let form = document.getElementsByTagName('form');
         if (form.length) {
             form[0].submit();
         }
@@ -159,12 +52,70 @@ var Gallery = {
 };
 $(document).ready(function() {
     console.log('admin');
-    
-    $('#file-select').on('change', function() {
-        
-        this.form.submit();
-        
+
+    tinymce.init({
+        selector: 'textarea',  // change this value according to your HTML
+        plugin: 'a_tinymce_plugin',
+        a_plugin_option: true,
+        a_configuration_option: 600,
+        height : 168
     });
-    
+
+    let fileUpload = document.querySelector('input#file-select');
+    if (fileUpload) {
+        console.log(fileUpload);
+        fileUpload.oninput = FileUpload;
+    }
 });
+
+let FileUpload = function(e) {
+    e.preventDefault();
+    let input = e.target;
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            // update also the user media
+            let data = new FormData()
+            data.append('media', input.files[0]);
+            fetch('/admin/media/index/' + input.dataset.menu, {
+                method: 'POST',
+                body: data
+            }).then(function(response) {
+                return response.text();
+            }).then(function(response) {
+                console.log(response);
+                fetch('/admin/views/item.tmpl')
+                    .then(function(response) {
+                        return response.text();
+                    })
+                    .then(function(template) {
+                        let item = Mustache.render(template, {
+                            menu: input.dataset.menu,
+                            image: e.target.result,
+                            name: input.files[0].name
+                        })
+                        let gallery = document.querySelector('.gallery');
+                        let div = document.createElement('div');
+                        div.className = 'col-md-2 item';
+                        div.innerHTML = item
+                        gallery.appendChild(div);
+                    });
+            });
+
+
+            /*
+            Main.Request.Api.Private('/users/' + userId + '/media').File(data)
+                .then(function(response) {
+                    showErrorMsg(input.form, 'success', 'Cool! Your avatar changed!.');
+                    let holder = input.closest('form').querySelector('.kt-avatar__holder');
+                    holder.style.cssText = 'background-image: url(' + e.target.result + ')';
+                }).catch(function(response) {
+                showErrorMsg(input.form, 'danger', 'Something went terribly wrong!.');
+            });
+
+             */
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 

@@ -1,0 +1,19 @@
+{
+  "display": "fullscreen",
+  "start_url": "/people",
+  "name": "Sandra Branco | A Fotógrafa",
+  "short_name": "A Fotógrafda",
+  "icons": [{
+    "src": "assets/img/sb_192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+    {
+      "src": "assets/img/sb_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait"
+}

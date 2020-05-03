@@ -30,7 +30,7 @@ and open the template in the editor.
             <div class="author col-md-12">
                 <h1>sandra branco</h1>
                 <h2>photography</h2>
-                <div class="fb-like" data-href="https://sandrabranco.com" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div class="fb-like" data-href="https://sandrabranco.org" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
             </div>
             <div class="menu col-md-3">
                 <ul class="nav">

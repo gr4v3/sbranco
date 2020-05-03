@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 ?>
-<form target="pages-form-target" action="https://sandrabranco.com/admin/pages/index/<?php echo $link; ?>?type=ajax" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+<form target="pages-form-target" action="https://sandrabranco.org/admin/pages/index/<?php echo $link; ?>?type=ajax" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
         <label class="control-label col-sm-4"for="title">Nome do menu:</label>
         <div class="col-sm-6"><input type="text" class="form-control" id="title" name="page[title]" value="<?php echo $title; ?>"></div> 
@@ -30,6 +30,12 @@
         </div>
     </div>
     <div class="form-group">
+        <label class="control-label col-sm-4"for="description">Descrição:</label>
+        <div class="col-sm-8">
+            <textarea class="form-control" id="description" name="page[description]" ><?php echo $description; ?></textarea>
+        </div>
+    </div>
+    <div class="form-group">
         <label class="control-label col-sm-4"for="background">Cor do background:</label>
         <div class="col-sm-8"><input type="color" class="form-control" id="background" name="page[background]" value="<?php echo $background; ?>"></div>
     </div>
@@ -42,21 +48,20 @@
         <div class="col-sm-8"><input type="color" class="form-control" id="background" name="page[bordercolor]" value="<?php echo isset($bordercolor)?$bordercolor:'#ffffff'; ?>"></div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-4"for="type">Tipo de galeria:</label>
-        <div class="col-sm-2">
-            <select class="form-control" id="type" name="page[type]">
-                <option value="slide">slideshow horizontal</option>
-                <option value="vertical">slideshow vertical</option>
-            </select>
-        </div>
-
+        <label class="control-label col-sm-4"for="background">Cor do background do header:</label>
+        <div class="col-sm-8"><input type="color" class="form-control" id="background" name="page[headercolor]" value="<?php echo isset($headercolor)?$headercolor:'#ffffff'; ?>"></div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-4"for="background">Cor da fonte do header:</label>
+        <div class="col-sm-8"><input type="color" class="form-control" id="background" name="page[headerbackground]" value="<?php echo isset($headerbackground)?$headerbackground:'#ffffff'; ?>"></div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-12"for="type">Fotografias:</label>
         <div class="col-sm-12 gallery">
             <div class="col-md-2 item add">
                 <label class="fa fa-plus" for="file-select">
-                    <input type="file" id="file-select" name="photos[]" multiple style="display:none;"/>
+                    <input data-menu="<?php echo $link; ?>" type="file" id="file-select" name="photos[]" accept="image/png, image/jpeg, image/jpg" multiple style="display:none;"/>
+                    <span>pode incluir mais que uma foto</span>
                 </label>
             </div>
             <div ondrop="Gallery.clear()"  ondragover="Gallery.allowdrop(event)" class="col-md-2 item fa fa-trash">

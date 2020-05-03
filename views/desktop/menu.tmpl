@@ -1,0 +1,27 @@
+<div class="inside">
+    <div class="middle">
+        <ul class="nav">
+            {{#pages}}
+            <li>
+                <a aria-label="{{clear_title}}" data-index="{{link}}" href="/{{link}}" title="{{clear_title}}">
+                    {{{encoded_title}}}
+                    <div></div>
+                </a>
+            </li>
+            {{/pages}}
+        </ul>
+        <div class="extra">
+            <a href="#">about me<div></div></a>&nbsp;/
+            <a href="#">music<div></div></a>&nbsp;/
+            <a href="#">design<div></div></a>&nbsp;/
+            <a href="#">contact me<div></div></a>
+        </div>
+        <div class="external">
+            <a rel="noopener" target="_blank" href="https://www.facebook.com/sbrancophoto/" class="facebook"></a>
+            <a rel="noopener" target="_blank" href="https://www.instagram.com/sbrancotellsthestory" class="instagram"></a>
+            <a rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://sandrabranco.org"
+               onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+               target="_blank" title="Share on Facebook" class="share"></a>
+        </div>
+    </div>
+</div>

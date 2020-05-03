@@ -32,8 +32,7 @@ if (strrchr($image, '/')) {
 }
 
 if (!is_file($image)) {
-    $root = '/home/simples/domains/office.simples.pt/public_html';
-    $image = $image;
+    $root = '/var/www/html/sbranco';
 }
 
 include_once 'SimpleImage.php';

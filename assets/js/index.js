@@ -56,7 +56,7 @@ $(document).ready(function() {
     
     
     if (window.location.pathname === '/') {
-        $('.nav li:first-child a').trigger('click');
+        //$('.nav li:first-child a').trigger('click');
     }
     
 });

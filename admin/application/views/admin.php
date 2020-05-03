@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Director | Dashboard</title>
+    <title>Sandra Branco | Admin</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
     <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <!-- Theme style -->
     <link href="/admin/assets/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="/admin/assets/css/admin.css" rel="stylesheet" type="text/css" />
+    <link href="/admin/assets/css/admin.css?<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -105,61 +105,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         </div><!-- ./wrapper -->
 
+        <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/admin/assets/js/jquery.form.js"></script>
+        <script type="text/javascript" src="/bower_components/tinymce/tinymce.min.js"></script>
+        <script type="text/javascript" src="/bower_components/mustache/mustache.min.js"></script>
+        <script src="/admin/assets/js/Director/dashboard.js?<?php echo time(); ?>" type="text/javascript"></script>
 
-        <!-- jQuery 2.0.2 -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
-        <!-- jQuery UI 1.10.3 -->
-        <script src="/admin/assets/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
-        <!-- Bootstrap -->
-        <script src="/admin/assets/js/bootstrap.min.js" type="text/javascript"></script>
-        <!-- daterangepicker -->
-        <script src="/assets/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
 
-        <script src="/admin/assets/js/plugins/chart.js" type="text/javascript"></script>
-
-        <!-- datepicker
-        <script src="/admin/assets/js/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>-->
-        <!-- Bootstrap WYSIHTML5
-        <script src="/admin/assets/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>-->
-        <!-- iCheck -->
-        <script src="/admin/assets/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-        <!-- calendar -->
-        <script src="/admin/assets/js/plugins/fullcalendar/fullcalendar.js" type="text/javascript"></script>
-
-        <!-- Director App -->
-        <script src="/admin/assets/js/Director/app.js" type="text/javascript"></script>
-        <script src="/admin/assets/js/dropzone.js" type="text/javascript"></script>
-        <!-- Director dashboard demo (This is only for demo purposes) -->
-        <script src="/admin/assets/js/Director/dashboard.js" type="text/javascript"></script>
-        
-        <!-- Director for demo purposes -->
-        <script type="text/javascript">
-            $('input').on('ifChecked', function(event) {
-                // var element = $(this).parent().find('input:checkbox:first');
-                // element.parent().parent().parent().addClass('highlight');
-                $(this).parents('li').addClass("task-done");
-                console.log('ok');
-            });
-            $('input').on('ifUnchecked', function(event) {
-                // var element = $(this).parent().find('input:checkbox:first');
-                // element.parent().parent().parent().removeClass('highlight');
-                $(this).parents('li').removeClass("task-done");
-                console.log('not');
-            });
-
-        </script>
-        <script>
-            $('#noti-box').slimScroll({
-                height: '400px',
-                size: '5px',
-                BorderRadius: '5px'
-            });
-
-            $('input[type="checkbox"].flat-grey, input[type="radio"].flat-grey').iCheck({
-                checkboxClass: 'icheckbox_flat-grey',
-                radioClass: 'iradio_flat-grey'
-            });
-</script>
 </body>
 </html>
