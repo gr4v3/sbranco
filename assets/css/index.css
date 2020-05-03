@@ -68,7 +68,7 @@ body.body {
 }
 .gallery .item img {
     width: auto;
-    height: 75vh;
+    height: 73.8vh;
     padding: 0;
     margin: 0;
     border-right-width: 0;
@@ -184,9 +184,6 @@ body .content {
 .slide .item {
     display: table-cell;
     background-color: white;
-}
-.slide .item img {
-    height: 100%;
 }
 body a, body a:hover, body a:focus {
     text-decoration: none;

@@ -181,15 +181,9 @@ let renderContent = function(item, template) {
         item = renderContent.item;
         template = renderContent.template;
     }
-    let title = document.querySelector('.title');
-    let footer = document.querySelector('.footer');
     let content = document.querySelector('.content');
-    let menu = document.querySelector('.menu');
-    let height = footer.offsetTop - (title.offsetTop + title.offsetHeight);
-    item.active = height - 80;
-    content.style.height = height + 'px';
-    menu.style.height = height + 'px';
     content.innerHTML = Mustache.render(template, item);
+    checkHeight();
     if (item.hasOwnProperty('audio') && String(item.audio).trim() !== '') {
         console.log(item.audio);
         let audio = document.querySelector('audio');
@@ -242,6 +236,24 @@ let menuEngage = function(pages) {
         });
     });
 }
+let checkHeight = function() {
+    let title = document.querySelector('.title');
+    let footer = document.querySelector('.footer');
+    let content = document.querySelector('.content');
+    let menu = document.querySelector('.menu');
+    let slide = document.querySelector('.slide');
+    let imgCollection = document.querySelectorAll('.gallery img');
+    let height = footer.offsetTop - (title.offsetTop + title.offsetHeight);
+    content.style.height = height + 'px';
+    menu.style.height = height + 'px';
+    let imgHeight = height - 80;
+    let paddingHeight = ( height - imgHeight ) / 2;
+    imgCollection.forEach(function(img) {
+        img.style.height = imgHeight  + 'px';
+    });
+    slide.style.paddingTop = paddingHeight  + 'px';
+    slide.style.paddingBottom = paddingHeight  + 'px';
+}
 window.onresize = function() {
-    renderContent();
+    checkHeight();
 }

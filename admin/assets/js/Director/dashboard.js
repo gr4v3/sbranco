@@ -20,10 +20,17 @@ let Gallery = {
     },
     clear:function() {
         console.log('gallery clear');
-        if (Gallery.prev) Gallery.prev.parentNode.parentNode.removeChild(Gallery.prev.parentNode);
-        let form = document.getElementsByTagName('form');
-        if (form.length) {
-            form[0].submit();
+        if (Gallery.prev) {
+            let input = Gallery.prev.querySelector('input');
+                console.log(input.value);
+            fetch('/admin/media/delete/' + input.dataset.menu + '/' + input.value)
+                .then(function(response) {
+                    return response.text();
+                })
+                .then(function(response) {
+                    console.log(response);
+                    Gallery.prev.parentNode.parentNode.removeChild(Gallery.prev.parentNode);
+                });
         }
     },
     allowdrop:function(event) {
@@ -44,10 +51,6 @@ let Gallery = {
     },
     drop:function() {
         console.log('gallery item dropped!');
-        let form = document.getElementsByTagName('form');
-        if (form.length) {
-            form[0].submit();
-        }
     }
 };
 $(document).ready(function() {
@@ -77,7 +80,7 @@ let FileUpload = function(e) {
             // update also the user media
             let data = new FormData()
             data.append('media', input.files[0]);
-            fetch('/admin/media/index/' + input.dataset.menu, {
+            fetch('/admin/media/upload/' + input.dataset.menu, {
                 method: 'POST',
                 body: data
             }).then(function(response) {
@@ -101,19 +104,6 @@ let FileUpload = function(e) {
                         gallery.appendChild(div);
                     });
             });
-
-
-            /*
-            Main.Request.Api.Private('/users/' + userId + '/media').File(data)
-                .then(function(response) {
-                    showErrorMsg(input.form, 'success', 'Cool! Your avatar changed!.');
-                    let holder = input.closest('form').querySelector('.kt-avatar__holder');
-                    holder.style.cssText = 'background-image: url(' + e.target.result + ')';
-                }).catch(function(response) {
-                showErrorMsg(input.form, 'danger', 'Something went terribly wrong!.');
-            });
-
-             */
         }
         reader.readAsDataURL(input.files[0]);
     }

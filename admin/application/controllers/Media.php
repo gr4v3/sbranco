@@ -19,7 +19,7 @@ class Media extends MY_Controller
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function index($index)
+    public function upload($index)
     {
         $media = $_FILES['media'];
         if (move_uploaded_file($media['tmp_name'], '../assets/pages/' . $index . '/' . $media['name'])) {
@@ -27,5 +27,21 @@ class Media extends MY_Controller
             $options['items'][] = $media['name'];
             file_put_contents('../assets/pages/' . $index . '/.options', json_encode($options));
         }
+        header("HTTP/1.0 204 No Content");
+        exit();
+    }
+
+    public function delete($index, $name) {
+        $options = json_decode(file_get_contents('../assets/pages/' . $index . '/.options'), true);
+        $medias = [];
+        foreach($options['items'] as $value) {
+            if ($value !== $name) {
+                $medias[] = $value;
+            }
+        }
+        $options['items'] = $medias;
+        file_put_contents('../assets/pages/' . $index . '/.options', json_encode($options));
+        header("HTTP/1.0 204 No Content");
+        exit();
     }
 }

@@ -60,7 +60,7 @@
         <div class="col-sm-12 gallery">
             <div class="col-md-2 item add">
                 <label class="fa fa-plus" for="file-select">
-                    <input data-menu="<?php echo $link; ?>" type="file" id="file-select" name="photos[]" accept="image/png, image/jpeg, image/jpg" multiple style="display:none;"/>
+                    <input data-menu="<?php echo $link; ?>" type="file" id="file-select" name="photos[]" accept="image/*" multiple style="display:none;"/>
                     <span>pode incluir mais que uma foto</span>
                 </label>
             </div>
