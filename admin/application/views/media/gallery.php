@@ -5,19 +5,20 @@
  * and open the template in the editor.
  */
 ?>
-<form id="pages-form" enctype="multipart/form-data" action="/admin/track" method="post">
+<form>
 <div class="container-fluid">
-    <div class="col-md-12 gallery">
+    <div class="container-fluid gallery">
         <div class="col-md-2 item add">
-                <label class="fa fa-plus" for="file-select">
-                    <input type="file" id="file-select" name="audios[]" multiple style="display:none;"/>
-                </label>
+            <label class="fa fa-plus" for="audio-select">
+                <input type="file" id="audio-select" name="audio" accept="audio/mp3,audio/*" multiple style="display:none;"/>
+                <span>clique aqui para adicionar 1 audio</span>
+            </label>
         </div>
-        <!--
-        <div ondrop="Gallery.clear()" ondragover="Gallery.allowdrop(event)" class="col-md-2 item fa fa-trash">
-            <div>arraste para aqui se deseja apagar o ficheiro</div>
+        <div class="col-md-2 item delete" ondrop="Gallery.clearAudio()"  ondragover="Gallery.allowdrop(event)">
+            <label class="fa fa-trash">
+                <span>arraste para aqui se deseja apagar o audio</span>
+            </label>
         </div>
-        -->
         <?php 
             echo $items;
         ?>

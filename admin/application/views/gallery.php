@@ -6,16 +6,20 @@
  * and open the template in the editor.
  */
 ?>
-<form id="pages-form" target="pages-form-target" action="/admin/pages/update" method="post">
+<form >
 <div class="container-fluid">
     <div class="container-fluid gallery">
         <div class="col-md-2 item add">
-            <a href="/admin/pages/index">
-                <div class="fa fa-plus"></div>
+            <a href="javascript:AddMenu();">
+                <label class="fa fa-plus">
+                    <span>adicione um menu clicando aqui</span>
+                </label>
             </a>
         </div>
-        <div ondrop="Gallery.clear()" ondragover="Gallery.allowdrop(event)" class="col-md-2 item fa fa-trash">
-            <div>arraste para aqui se deseja apagar a foto</div>
+        <div class="col-md-2 item delete" ondrop="Gallery.clear()"  ondragover="Gallery.allowdrop(event)">
+            <label class="fa fa-trash">
+                <span>arraste para aqui se deseja apagar a foto</span>
+            </label>
         </div>
         <?php 
             echo $items;
@@ -23,4 +27,3 @@
     </div>
 </div>
 </form>
-<iframe name="pages-form-target" style="display:none;"></iframe>

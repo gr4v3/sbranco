@@ -109,6 +109,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script type="text/javascript" src="/admin/assets/js/jquery.form.js"></script>
         <script type="text/javascript" src="/bower_components/tinymce/tinymce.min.js"></script>
         <script type="text/javascript" src="/bower_components/mustache/mustache.min.js"></script>
+        <script type="text/javascript" src="/bower_components/js-md5/src/md5.js"></script>
         <script src="/admin/assets/js/Director/dashboard.js?<?php echo time(); ?>" type="text/javascript"></script>
 
 

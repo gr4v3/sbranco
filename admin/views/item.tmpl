@@ -1,4 +1,4 @@
-<div draggable="true" ondragend="Gallery.drop()" onmouseup="Gallery.drop()" ondragstart="Gallery.dragstart(event)" ondragenter="Gallery.dragenter(event);"
+<div draggable="true" ondragend="Gallery.drop(this)" onmouseup="Gallery.drop(this)" ondragstart="Gallery.dragstart(event)" ondragenter="Gallery.dragenter(event);"
      style="background-image:url({{image}});">
     <input data-menu="{{menu}}" type="hidden" name="page[items][]" value="{{name}}" />
 </div>

@@ -26,6 +26,8 @@
     "jquery": "^3.5.0",
     "mobile-detect": "^1.4.4",
     "is-mobile": "*",
-    "tinymce": "^5.2.2"
+    "tinymce": "^5.2.2",
+    "jquery-easing": "*",
+    "js-md5": "md5#^0.7.3"
   }
 }

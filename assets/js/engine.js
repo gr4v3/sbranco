@@ -51,7 +51,8 @@ let autobrowse = {
                     currentSlide.classList.remove('view');
                     currentSlide.nextElementSibling.classList.add('view');
                     $(document.querySelector('.slide')).scrollTo(currentSlide.nextElementSibling, {
-                        duration:300
+                        duration: 2000,
+                        easing: 'easeInOutQuart'
                     });
                     resolve();
                 }
@@ -99,6 +100,7 @@ jQuery(document).ready(function() {
                         startX = e.pageX - slider.offsetLeft;
                         scrollLeft = slider.scrollLeft;
                         slider.classList.add('sliding');
+                        $(slider).stop();
                     }
                 });
                 document.addEventListener('mousemove', function(e) {
@@ -118,12 +120,18 @@ jQuery(document).ready(function() {
                             console.log('went left');
                             $(slider).animate({
                                 scrollLeft: slider.scrollLeft - (scrollLeft - slider.scrollLeft),
-                            }, 200);
+                            }, {
+                                duration: 700,
+                                easing: 'easeOutQuart'
+                            });
                         } else {
                             console.log('went right');
                             $(slider).animate({
                                 scrollLeft: slider.scrollLeft + (slider.scrollLeft - scrollLeft)
-                            }, 200);
+                            }, {
+                                duration: 700,
+                                easing: 'easeOutQuart'
+                            });
                         }
                     }
                 });

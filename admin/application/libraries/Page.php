@@ -31,7 +31,7 @@ class Page {
         $page_path = CLIENTPATH . 'assets/pages/' . $name;
         if (!is_dir($page_path)) mkdir($page_path, 0777, TRUE);
         file_put_contents($page_path. '/.options', json_encode($options));
-        file_put_contents($page_path. '/.htaccess', 'RewriteRule ^img-([0-9]{1,4}|\bauto\b)?-([0-9]{1,4}|\bauto\b)?/(([A-Za-z0-9/_-]+).(jpg|gif|png))?$ /var/www/html/sbranco/resize.php?width=$1&height=$2&imgfile=$3');
+        //file_put_contents($page_path. '/.htaccess', 'RewriteRule ^img-([0-9]{1,4}|\bauto\b)?-([0-9]{1,4}|\bauto\b)?/(([A-Za-z0-9/_-]+).(jpg|gif|png))?$ /var/www/html/sbranco/resize.php?width=$1&height=$2&imgfile=$3');
     }
     public function get($name = NULL) {
         $page_path = CLIENTPATH . 'assets/pages/' . $name;

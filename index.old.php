@@ -47,6 +47,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         </audio>
     </div>
 <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script src="/bower_components/jquery-easing/jquery.easing.min.js"></script>
 <script src="/bower_components/tinymce/tinymce.min.js" type="text/javascript"></script>
 <script src="/assets/js/jquery.scrollTo.min.js" type="text/javascript"></script>
 <script src="/bower_components/mustache/mustache.min.js" type="text/javascript"></script>
