@@ -38,14 +38,15 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
         <div class="footer">
             <a href="mailto:sbranco.85@gmail.com?Subject=Website%20|%20A%20Fotógrafa%20|%20Contacto">Contact</a>
             ©2020 SANDRA BRANCO
+            <div class="audio">
+                <audio id="track" loop="true" controls>
+                    <source type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
         </div>
     </div>
-    <div class="audio">
-        <audio id="track" loop="true">
-            <source type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+
 <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 <script src="/bower_components/jquery-easing/jquery.easing.min.js"></script>
 <script src="/bower_components/tinymce/tinymce.min.js" type="text/javascript"></script>

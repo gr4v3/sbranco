@@ -179,7 +179,11 @@ body .content {
     text-align:center;
 }
 .audio audio {
-    height: 20px;
+    height: 17px;
+    text-align: center;
+    left: -18px;
+    position: relative;
+    bottom: -6px;
 }
 .slide .item {
     display: table-cell;
@@ -284,7 +288,12 @@ body .menu {
     height: 1.7em;
     margin-bottom: 0.46em;
 }
-
+.footer .audio {
+    visibility: hidden;
+}
+.footer:hover .audio {
+    visibility: visible;
+}
 @media (max-width: 767px) {
     .col-lg-9 {
         width: 75%;
