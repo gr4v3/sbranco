@@ -199,7 +199,7 @@ let renderContent = function(item, template) {
         if (source.src.indexOf(item.audio)<0) {
             source.src = '/assets/audio/' + item.audio;
             audio.load();
-            //audio.play();
+            audio.play();
         }
     }
     document.title = 'Sandra Branco | ' + item.clear_title;
