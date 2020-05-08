@@ -172,19 +172,6 @@ body .content {
 .author h2 {
     display: none;
 }
-.audio {
-    position:fixed;
-    bottom:0;
-    width: 100vw;
-    text-align:center;
-}
-.audio audio {
-    height: 17px;
-    text-align: center;
-    left: -18px;
-    position: relative;
-    bottom: -6px;
-}
 .slide .item {
     display: table-cell;
     background-color: white;
@@ -288,12 +275,26 @@ body .menu {
     height: 1.7em;
     margin-bottom: 0.46em;
 }
-.footer .audio {
-    visibility: hidden;
+.audio {
+    position: fixed;
+    top: 3px;
+    right: 3px;
+    text-align: center;
+    width: 26px;
+    height: 26px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
+.audio.play {
+    background-image: url(/assets/img/audio_on.png);
+}
+.audio {
+    background-image: url(/assets/img/audio_off.png);
+}
+/*
 .footer:hover .audio {
     visibility: visible;
-}
+}*/
 @media (max-width: 767px) {
     .col-lg-9 {
         width: 75%;

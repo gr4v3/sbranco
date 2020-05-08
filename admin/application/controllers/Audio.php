@@ -8,7 +8,7 @@ class Audio extends MY_Controller
     {
         $media = $_FILES['media'];
         $name = $media['name'];
-        move_uploaded_file($media['tmp_name'], '../assets/audio/' . $name);
+        move_uploaded_file($media['tmp_name'], '../assets/audio/' . namelize($name));
         echo $media['name'];
         die();
     }

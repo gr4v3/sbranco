@@ -265,3 +265,13 @@ let checkHeight = function() {
 window.onresize = function() {
     checkHeight();
 }
+let toggleAudio = function(element) {
+    let track = document.querySelector('#track');
+    if (element.classList.contains('play')) {
+        element.classList.remove('play');
+        track.pause();
+    } else {
+        element.classList.add('play');
+        track.play();
+    }
+}
