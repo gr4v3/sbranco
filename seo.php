@@ -5,6 +5,7 @@
  * Date: 18/04/2020
  * Description:
  */
+error_reporting(0);
 $path_only = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 function clearTitle($text) {
     $text = preg_replace('/_i_(.*)_i_/i', '$1', $text);
@@ -51,7 +52,7 @@ if ($path_only === '/') {
     <meta property="og:url" content="<?= 'https://sandrabranco.org' .$path_only; ?>" />
     <?php
     foreach($content['items'] as $filename) {
-        echo '<meta property="og:image" content="https://sandrabranco.org/' . $content_path . '/' . $filename . '" />';
+        echo '<meta property="og:image" content="https://sandrabranco.org/img-auto-500/' . $content_path . '/' . $filename . '" />';
     }
     ?>
     <meta property="og:site_name" content="sandrabranco.org" />
@@ -62,7 +63,7 @@ if ($path_only === '/') {
 <?php echo $description; ?>
 <?php
     foreach($content['items'] as $filename) {
-        echo '<img src="' . $content_path . '/' . $filename . '" />';
+        echo '<img src="img-auto-500/' . $content_path . '/' . $filename . '" />';
     }
 ?>
 </body>

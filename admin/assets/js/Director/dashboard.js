@@ -65,15 +65,19 @@ let Gallery = {
         let aParent = a.parentNode;
         let bParent = b.parentNode;
 
+
+        /*
         let aHolder = document.createElement("div");
         let bHolder = document.createElement("div");
+
 
         aParent.replaceChild(aHolder,a);
         bParent.replaceChild(bHolder,b);
 
         aParent.replaceChild(b,aHolder);
         bParent.replaceChild(a,bHolder);
-
+        */
+        aParent.parentElement.insertBefore(bParent, aParent);
         console.log('gallery item swaped!');
     },
     drop:function() {
@@ -97,7 +101,8 @@ let Gallery = {
                 }).then(function(response) {
                     console.log(response);
                 });
-            } else {
+            }
+            else {
                 let menuCollection = document.querySelectorAll('.item.page input');
                 let items = [];
                 menuCollection.forEach(function(item) {
@@ -160,37 +165,45 @@ let Form = {
 let FileUpload = function(e) {
     e.preventDefault();
     let input = e.target;
-    if (input.files && input.files[0]) {
-        let reader = new FileReader();
-        reader.onload = function (e) {
-            let gallery = document.querySelector('.gallery');
-            let div = document.createElement('div');
-            div.className = 'col-md-2 item photo loading';
-            fetch('/admin/views/item.tmpl')
-                .then(function(response) {
-                    return response.text();
-                })
-                .then(function(template) {
-                    let extension = input.files[0].name.split('.')[1];
-                    div.innerHTML = Mustache.render(template, {
-                        menu: input.form.dataset.menu,
-                        image: e.target.result,
-                        name: md5(input.files[0].name) + '.' + extension.toLowerCase()
-                    })
-                    gallery.appendChild(div);
-                });
-            let data = new FormData()
-            data.append('media', input.files[0]);
-            fetch('/admin/media/upload/' + input.form.dataset.menu, {
-                method: 'POST',
-                body: data
-            }).then(function(response) {
+    if (input.files) {
+        let fileCollection = input.files;
+        fetch('/admin/views/item.tmpl')
+            .then(function(response) {
                 return response.text();
-            }).then(function(response) {
-                div.classList.remove('loading');
+            })
+            .then(function(template) {
+                for (let index = 0; index < fileCollection.length; index++) {
+                    let file = fileCollection[index];
+                    let reader = new FileReader();
+                    let completeEvent = function(e) {
+                        let gallery = document.querySelector('.gallery');
+                        let div = document.createElement('div');
+                        div.className = 'col-md-2 item photo loading';
+                        div.innerHTML = Mustache.render(template, {
+                            menu: input.form.dataset.menu,
+                            image: e.target.result,
+                            name: this.name
+                        })
+                        gallery.appendChild(div);
+                        let data = new FormData()
+                        data.append('media', this.binary);
+                        fetch('/admin/media/upload/' + input.form.dataset.menu, {
+                            method: 'POST',
+                            body: data
+                        }).then(function(response) {
+                            return response.text();
+                        }).then(function(response) {
+                            div.classList.remove('loading');
+                        });
+                    };
+                    let extension = file.name.split('.')[1];
+                    reader.onload = completeEvent.bind({
+                        name: md5(file.name) + '.' + extension.toLowerCase(),
+                        binary: file
+                    });
+                    reader.readAsDataURL(file);
+                }
             });
-        }
-        reader.readAsDataURL(input.files[0]);
     }
 }
 let AudioUpload = function(e) {

@@ -118,12 +118,13 @@ body .nav>li>a {
     z-index: 2;
 }
 .nav>li>a {
-    font-size: 316%;
+    font-size: 346%;
     line-height: 100%;
 }
 .nav>li>a >  span {
     line-height: 50%;
     font-weight: 600;
+    font-size: 97%;
 }
 .nav>li>a.active > div,
 .nav>li>a:hover > div {
@@ -133,7 +134,7 @@ body .nav>li>a {
     top: -6%;
     left: -5px;
     right: -5px;
-    bottom: 6%;
+    bottom: 3%;
 }
 body .nav>li>a:focus {
     color: black;
@@ -208,8 +209,8 @@ body a, body a:hover, body a:focus {
 }
 .extra {
     font-size: 120%;
-    padding: 1em 0;
-    margin-left: 3px;
+    padding: 7% 0;
+    margin-left: 6px;
 }
 .extra a {
     position: relative;
@@ -245,10 +246,10 @@ body .menu {
 }
 .inside .middle {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 .external {
-
+    margin-left: 2px;
 }
 .external a:after {
     width: 2.5em;

@@ -36,7 +36,6 @@ class SimpleImage {
      *                                  Where red, green, blue - integers 0-255, alpha - integer 0-127<br>
      *                                  (is used for creating image from scratch)
      *
-     * @return SimpleImage
      * @throws Exception
      *
      */
@@ -46,7 +45,6 @@ class SimpleImage {
         } elseif ($width) {
             $this->create($width, $height, $color);
         }
-        return $this;
     }
 
     /**

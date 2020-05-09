@@ -252,6 +252,7 @@ let checkHeight = function() {
     let slide = document.querySelector('.slide');
     let imgCollection = document.querySelectorAll('.gallery img');
     let height = footer.offsetTop - (title.offsetTop + title.offsetHeight);
+    let inside =  document.querySelector('.inside');
     content.style.height = height + 'px';
     menu.style.height = height + 'px';
     let imgHeight = height - 80;
@@ -261,6 +262,8 @@ let checkHeight = function() {
     });
     slide.style.paddingTop = paddingHeight  + 'px';
     slide.style.paddingBottom = paddingHeight  + 'px';
+    inside.style.paddingTop = paddingHeight  + 'px';
+    inside.style.paddingBottom = paddingHeight  + 'px';
 }
 window.onresize = function() {
     checkHeight();

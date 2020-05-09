@@ -108,6 +108,7 @@ input[type="color"] {
     top: 0;
     width: 88%;
     text-align: center;
+    height: 100%;
     line-height: 5em;
     font-size: 3em;
     color: white;

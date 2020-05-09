@@ -40,20 +40,32 @@ $cache_file = null;
 if (is_file("cache/$width-$height-$filename")) $cache_file = "cache/$width-$height-$filename";
 else if (is_file($root . "/cache/$width-$height-$filename")) $cache_file = $root . "/cache/$width-$height-$filename";
 
-if (is_file($cache_file)) { 
-    $img = new SimpleImage($cache_file);
-    $info = $img->get_original_info();
-    header("Content-type: " . $info['mime']);
-    die(file_get_contents($cache_file));
+if (is_file($cache_file)) {
+    try {
+        $img = new SimpleImage($cache_file);
+        $info = $img->get_original_info();
+        header("Content-type: " . $info['mime']);
+        die(file_get_contents($cache_file));
+    } catch (Exception $e) {
+        file_put_contents('cache/error.log', 'Error: ' . $e->getMessage(), FILE_APPEND);
+    }
+
 } 
 try {
     $img = new SimpleImage($root. '/' .$image);
-    $img->quality = 100;
-    if ($width === 'auto') $img->fit_to_height($height);
-    else if ($height === 'auto') $img->fit_to_width($width);
-    else $img->best_fit($width, $height);
+    $info = $img->get_original_info();
+    $img->quality = 90;
+    if ($width === 'auto') {
+        $img->fit_to_height($height);
+    }
+    else if ($height === 'auto') {
+        $img->fit_to_width($width);
+    }
+    else {
+        $img->best_fit($width, $height);
+    }
     $img->save("cache/$width-$height-$filename");
     $img->output();
 } catch(Exception $e) {
-    echo 'Error: ' . $e->getMessage();
+    file_put_contents('cache/error.log', 'Error: ' . $e->getMessage(), FILE_APPEND);
 }

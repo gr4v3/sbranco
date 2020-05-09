@@ -5,6 +5,7 @@
  * Date: 25/04/2020
  * Description:
  */
+error_reporting(0);
 $fileCollection = array_diff(scandir('assets/pages'), array('.', '..'));
 $pages = [];
 function clearTitle($text) {
