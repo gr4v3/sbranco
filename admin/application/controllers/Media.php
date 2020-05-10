@@ -9,6 +9,9 @@ class Media extends MY_Controller
         $media = $_FILES['media'];
         $nameExploded = explode('.', $media['name']);
         $extension = strtolower(end($nameExploded));
+        if ($extension === 'jpeg') {
+            $extension = 'jpg';
+        }
         $name = md5($media['name']) . '.' . $extension;
         move_uploaded_file($media['tmp_name'], '../assets/pages/' . $index . '/' . $name);
         $options = json_decode(file_get_contents('../assets/pages/' . $index . '/.options'), true);

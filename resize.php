@@ -47,9 +47,8 @@ if (is_file($cache_file)) {
         header("Content-type: " . $info['mime']);
         die(file_get_contents($cache_file));
     } catch (Exception $e) {
-        file_put_contents('cache/error.log', 'Error: ' . $e->getMessage(), FILE_APPEND);
+        file_put_contents('cache/error.log', 'Error: ' . $e->getMessage(). "\n", FILE_APPEND);
     }
-
 } 
 try {
     $img = new SimpleImage($root. '/' .$image);
@@ -67,5 +66,5 @@ try {
     $img->save("cache/$width-$height-$filename");
     $img->output();
 } catch(Exception $e) {
-    file_put_contents('cache/error.log', 'Error: ' . $e->getMessage(), FILE_APPEND);
+    file_put_contents('cache/error.log', 'Error: ' . $e->getMessage(). "\n", FILE_APPEND);
 }
