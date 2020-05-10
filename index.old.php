@@ -16,9 +16,9 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <meta name="Description" content="Sandra Branco | A Fotógrafa | Casamentos | Batizados | Festas">
     <meta name="theme-color" content="#fff">
     <title>Sandra Branco | A Fotógrafa</title>
-    <link href="/assets/css/index.css?<?php echo time(); ?>" rel="stylesheet" type="text/css">
+    <link href="/assets/css/index.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/assets/css/media.css?<?php echo time(); ?>" rel="stylesheet" type="text/css">
+    <link href="/assets/css/media.css" rel="stylesheet" type="text/css">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="/assets/img/sb_192.png">
 </head>
@@ -47,9 +47,8 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     </audio>
 <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 <script src="/bower_components/jquery-easing/jquery.easing.min.js"></script>
-<script src="/bower_components/tinymce/tinymce.min.js" type="text/javascript"></script>
 <script src="/assets/js/jquery.scrollTo.min.js" type="text/javascript"></script>
 <script src="/bower_components/mustache/mustache.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="assets/js/engine.js?<?php echo time(); ?>"></script>
+<script type="text/javascript" src="assets/js/engine.js"></script>
 </body>
 </html>

@@ -31,12 +31,19 @@ html {
     letter-spacing: 0;
     font-family: code-bold, serif;
 }
+
 body{ scroll-behavior: smooth; }
 body.body {
     margin:0;
     padding:0;
     font-size: 0.9vw;
     height: 100vh;
+}
+body .content,
+body .menu,
+body .title,
+body .footer {
+    contain: content;
 }
 .main {
     position: fixed;
@@ -74,8 +81,6 @@ body.body {
     border-right-width: 0;
     border-left: 8px solid white;
 }
-.gallery .item.view img {
-}
 .gallery .item:first-child img {
     border-left-width: 0;
 }
@@ -92,15 +97,12 @@ body.body {
     position: absolute;
     color: rgba(255, 255, 255, 0.36);
 }
-
 .nav {
     text-transform: capitalize;
     margin-left: 10px;
 }
 body .nav>li>a {
     color: black;
-}
-body .nav>li {
 }
 body .nav>li>a:hover,
 body .nav>li>a:focus {
@@ -275,6 +277,9 @@ body .menu {
     background-image: url(/assets/img/share.svg);
     height: 1.7em;
     margin-bottom: 0.46em;
+}
+.external a span {
+    display: none;
 }
 .audio {
     position: fixed;

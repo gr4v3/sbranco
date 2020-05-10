@@ -67,7 +67,6 @@ jQuery(document).ready(function() {
     fetch('/pages.php').then(function(response){
         return response.json();
     }).then(function(pages) {
-        console.log(pages);
         isMobile()
             .then(function() {
                 fetch('/views/mobile/menu.tmpl')
@@ -182,15 +181,9 @@ let menuStatus = function(element) {
     }
 }
 let renderContent = function(item, template) {
-    if (item && template) {
-        renderContent.item = item;
-        renderContent.template = template;
-    } else {
-        item = renderContent.item;
-        template = renderContent.template;
-    }
     let content = document.querySelector('.content');
     content.innerHTML = Mustache.render(template, item);
+    lazyLoad(content);
     checkHeight();
     if (item.hasOwnProperty('audio') && String(item.audio).trim() !== '') {
         console.log(item.audio);
@@ -205,17 +198,18 @@ let renderContent = function(item, template) {
     document.title = 'Sandra Branco | ' + item.clear_title;
     document.querySelector('#mobile').checked = false;
     window.history.pushState({page:item.link}, item.link, item.link);
+    document.querySelectorAll('.menu a').forEach(function(each) {
+        each.classList.remove('active');
+    });
+    let currentMenu = document.querySelector('a[data-index="' + item.link + '"]');
+    currentMenu.classList.add('active');
 }
-renderContent.item = false;
-renderContent.template = false;
 let menuEngage = function(pages) {
     let menuLinks = document.querySelectorAll('.menu .nav a');
     menuLinks.forEach(function(element) {
         element.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelectorAll('.menu a').forEach(function(each) {
-                each.classList.remove('active');
-            });
+
             let menuItemElement = e.target;
             if (e.target.tagName !== 'A') {
                 menuItemElement = e.target.closest('a');
@@ -225,18 +219,16 @@ let menuEngage = function(pages) {
                     document.body.classList.remove('menu-open');
                     document.body.classList.add('page');
                     isMobile().then(function() {
-                        fetch('/views/mobile/slide.tmpl?' + Date.now()).then(function(response) {
+                        fetch('/views/mobile/slide.tmpl').then(function(response) {
                             return response.text();
                         }).then(function(template) {
                             renderContent(item, template);
-                            menuItemElement.classList.add('active');
                         });
                     }).catch(function() {
-                        fetch('/views/slide.tmpl?' + Date.now()).then(function(response) {
+                        fetch('/views/slide.tmpl').then(function(response) {
                             return response.text();
                         }).then(function(template) {
                             renderContent(item, template);
-                            menuItemElement.classList.add('active');
                         });
                     });
                 }
@@ -277,4 +269,22 @@ let toggleAudio = function(element) {
         element.classList.add('play');
         track.play();
     }
+}
+let isInViewport = function (elem) {
+    let bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+let lazyLoad = function(containerElemenet) {
+    let loading = containerElemenet.querySelectorAll('.loading');
+    loading.forEach(function(img) {
+        if (isInViewport(img)) {
+            img.src = img.dataset.src;
+            img.classList.remove('loading');
+        }
+    });
 }
