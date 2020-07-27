@@ -114,3 +114,12 @@ input[type="color"] {
     color: white;
     background-color: #0000002b;
 }
+.gallery .item.photo a {
+    display:none;
+}
+.gallery .item.photo:hover a {
+    float: right;
+    padding: 0 5px;
+    color: red;
+    display:block;
+}

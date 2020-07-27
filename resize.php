@@ -32,7 +32,7 @@ if (strrchr($image, '/')) {
 }
 
 if (!is_file($image)) {
-    $root = '/var/www/html/sbranco';
+    $root = '/var/www/html';
 }
 
 include_once 'SimpleImage.php';

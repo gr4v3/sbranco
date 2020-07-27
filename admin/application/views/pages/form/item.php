@@ -42,11 +42,6 @@
                     <span>clique aqui para adicionar foto</span>
                 </label>
             </div>
-            <div class="col-md-2 item delete" ondrop="Gallery.clear()"  ondragover="Gallery.allowdrop(event)">
-                <label class="fa fa-trash">
-                    <span>arraste para aqui se deseja apagar a foto</span>
-                </label>
-            </div>
             <?php 
                 echo $gallery;
             ?>

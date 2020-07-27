@@ -282,9 +282,7 @@ let isInViewport = function (elem) {
 let lazyLoad = function(containerElemenet) {
     let loading = containerElemenet.querySelectorAll('.loading');
     loading.forEach(function(img) {
-        if (isInViewport(img)) {
-            img.src = img.dataset.src;
-            img.classList.remove('loading');
-        }
+        img.src = img.dataset.src;
+        img.classList.remove('loading');
     });
 }

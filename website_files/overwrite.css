@@ -16,11 +16,25 @@
 .mainmenu a:last-child:after {
     content: ''
 }
+body .mainmenu a,
 body .mainmenu a:hover,
 body .mainmenu a.active {
     opacity: 1;
 }
 
 body .mainmenu a:first-child span {
-    opacity: 0.5;
+    opacity: 1;
+}
+@font-face {
+    font-family: code-light;
+    src: url(../assets/fonts/BebasNeue-Light.otf);
+}
+.overlay a span,
+.grid .griditem a span {
+	font-weight: 600;
+}
+body .overlay a:hover, 
+body .overlay a:focus, 
+body .overlay a.active {
+    color: #c58600;
 }

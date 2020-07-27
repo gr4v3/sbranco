@@ -80,6 +80,7 @@ body .footer {
     margin: 0;
     border-right-width: 0;
     border-left: 8px solid white;
+	pointer-events: none;
 }
 .gallery .item:first-child img {
     border-left-width: 0;
@@ -248,7 +249,7 @@ body .menu {
 }
 .inside .middle {
     display: table-cell;
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 .external {
     margin-left: 2px;

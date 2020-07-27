@@ -18,10 +18,12 @@ let Gallery = {
         console.log('gallery dragenter');
         Gallery.current = event.target;
     },
-    clear:function() {
-        console.log('gallery clear');
+    clear:function(element, page, name) {
+        console.log('gallery item clear');
+        console.log(page);
+        console.log(name);
         if (Gallery.prev) {
-            let input = Gallery.prev.querySelector('input');
+            /*
             if (input.form.dataset.hasOwnProperty('menu')) {
                 fetch('/admin/media/delete/' + input.form.dataset.menu + '/' + input.value)
                     .then(function(response) {
@@ -40,8 +42,16 @@ let Gallery = {
                         console.log(response);
                         Gallery.prev.parentNode.parentNode.removeChild(Gallery.prev.parentNode);
                     });
-            }
+            }*/
         }
+        fetch('/admin/media/delete/' + page + '/' + name)
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(response) {
+                console.log(response);
+                element.parentNode.parentNode.removeChild(element.parentNode);
+            });
     },
     clearAudio:function() {
         console.log('gallery clear');
@@ -64,25 +74,12 @@ let Gallery = {
     swap:function(a, b) {
         let aParent = a.parentNode;
         let bParent = b.parentNode;
-
-
-        /*
-        let aHolder = document.createElement("div");
-        let bHolder = document.createElement("div");
-
-
-        aParent.replaceChild(aHolder,a);
-        bParent.replaceChild(bHolder,b);
-
-        aParent.replaceChild(b,aHolder);
-        bParent.replaceChild(a,bHolder);
-        */
         aParent.parentElement.insertBefore(bParent, aParent);
         console.log('gallery item swaped!');
     },
     drop:function() {
-        console.log('gallery item dropped!');
         if (Gallery.current && Gallery.prev) {
+            console.log('gallery item dropped!');
             Gallery.swap(Gallery.current, Gallery.prev);
             let form = document.querySelector('form');
             if (form.dataset.hasOwnProperty('menu')) {

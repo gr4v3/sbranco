@@ -24,6 +24,7 @@ class Media extends MY_Controller
     public function delete($index, $name): void
     {
         $options = json_decode(file_get_contents('../assets/pages/' . $index . '/.options'), true);
+        var_dump($options);
         $medias = [];
         foreach($options['items'] as $value) {
             if ($value !== $name) {
