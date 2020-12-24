@@ -35,25 +35,29 @@ if (!is_file($image)) {
     $root = '/var/www/html';
 }
 
-include_once 'SimpleImage.php';
 $cache_file = null;
 if (is_file("cache/$width-$height-$filename")) $cache_file = "cache/$width-$height-$filename";
 else if (is_file($root . "/cache/$width-$height-$filename")) $cache_file = $root . "/cache/$width-$height-$filename";
 
 if (is_file($cache_file)) {
     try {
-        $img = new SimpleImage($cache_file);
-        $info = $img->get_original_info();
-        header("Content-type: " . $info['mime']);
+        //$img = new SimpleImage($cache_file);
+        //$info = $img->get_original_info();
+		session_cache_limiter('none');
+        header("Content-type: image/jpeg");
+		header('Cache-control: max-age='.(60*60*24*365));
+		header('Expires: '.gmdate(DATE_RFC1123,time()+60*60*24*365));
+		header('Last-Modified: '.gmdate(DATE_RFC1123,filemtime($cache_file)));
         die(file_get_contents($cache_file));
     } catch (Exception $e) {
         file_put_contents('cache/error.log', 'Error: ' . $e->getMessage(). "\n", FILE_APPEND);
     }
 } 
 try {
+	include_once 'SimpleImage.php';
     $img = new SimpleImage($root. '/' .$image);
     $info = $img->get_original_info();
-    $img->quality = 90;
+    $img->quality = 100;
     if ($width === 'auto') {
         $img->fit_to_height($height);
     }

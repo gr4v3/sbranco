@@ -21,6 +21,15 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
     <link href="/assets/css/media.css" rel="stylesheet" type="text/css">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="/assets/img/sb_192.png">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166605634-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166605634-1');
+</script>
 </head>
 <body class="body">
     <label class="trigger" for="mobile"></label>

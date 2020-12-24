@@ -14,6 +14,7 @@ and open the template in the editor.
     margin: 1em auto;
     cursor:pointer;
     opacity:0.5;
+    display: table;
 }
 .gallery .item a {
     display:block;

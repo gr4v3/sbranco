@@ -311,7 +311,12 @@ body .menu {
         width: 25%;
         float: left;
     }
-}/*
+}
+body .nav>li>a[title=design] {
+	display: none;
+}
+
+/*
 @media (max-height: 468px) {
     .nav>li>a {
         font-size: 1.2em;

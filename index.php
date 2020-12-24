@@ -2,7 +2,7 @@
 require_once 'vendor/mobiledetect/mobiledetectlib/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 if ( !$detect->isMobile() ) {
-    require_once 'index.old.php';
+    require_once 'mobile.php';
     exit();
 }
 $pageIndexParameter = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
@@ -113,6 +113,14 @@ ksort($mainContent);
     <link rel="stylesheet" type="text/css" href="/website_files/overwrite.css?<?php echo time(); ?>" media="all">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="/assets/img/sb_192.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166605634-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-166605634-1');
+    </script>
 </head>
 <body>
 <div id="navigation" class="overlay">
@@ -142,7 +150,7 @@ ksort($mainContent);
     <a href="/" class="active"><span>Photography</span></a>
     <a rel="noopener" target="_blank" href="https://soundcloud.com/sandra-branco"><span>Film</span></a>
     <a rel="noopener" target="_blank" href="https://soundcloud.com/sandra-branco"><span>Music</span></a>
-    <a rel="noopener" target="_blank" href="https://www.facebook.com/sbrancophoto/"><span>Design</span></a>
+	<a class="manual" aria-label="design" data-index="design" href="/design" title="design"><span>design</span></a>
     <a rel="noopener" target="_blank" href="https://www.instagram.com/sbrancotellsthestory"><span>About</span></a>
 </div>
 

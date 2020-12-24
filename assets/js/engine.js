@@ -205,7 +205,7 @@ let renderContent = function(item, template) {
     currentMenu.classList.add('active');
 }
 let menuEngage = function(pages) {
-    let menuLinks = document.querySelectorAll('.menu .nav a');
+    let menuLinks = document.querySelectorAll('.menu .nav a, a.manual');
     menuLinks.forEach(function(element) {
         element.addEventListener('click', function(e) {
             e.preventDefault();
